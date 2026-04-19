@@ -1,0 +1,481 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>GreenKart Organics — Fresh, Pure, Natural Groceries Delivered Daily</title>
+<meta name="description" content="Shop 100% certified organic vegetables, fruits, dairy, grains, and wellness foods. Farm-to-doorstep delivery from local farmers. Free shipping over $50." />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,400;0,700;1,400&family=Quicksand:wght@400;500;600;700&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+<a class="skip-link" href="#main">Skip to main content</a>
+
+<!-- Top bar -->
+<div class="top-bar">
+  <div class="container top-bar__inner">
+    <div class="top-bar__left">
+      <span>100% Secure delivery without contacting the courier</span>
+    </div>
+    <div class="top-bar__right">
+      <a href="#">Need help? Call: <strong>+1 (800) 123-4567</strong></a>
+      <span class="sep">|</span>
+      <a href="#">English</a>
+      <a href="#">USD</a>
+    </div>
+  </div>
+</div>
+
+<!-- Header -->
+<header class="site-header">
+  <div class="container site-header__inner">
+    <a class="brand" href="#" aria-label="GreenKart Organics home">
+      <span class="brand__leaf" aria-hidden="true">
+        <svg width="36" height="36" viewBox="0 0 24 24" fill="none"><path d="M17 8C8 10 5.9 16.17 3.82 21.34L5.71 22L6.66 19.7C7.14 19.87 7.64 20 8 20C19 20 22 3 22 3C21 5 14 5.25 9 6.25C4 7.25 2 11.5 2 13.5C2 15.5 3.75 17.25 3.75 17.25C7 8 17 8 17 8Z" fill="#0098b8"/></svg>
+      </span>
+      <span class="brand__text">Green<span>Kart</span></span>
+    </a>
+
+    <form class="searchbar" role="search" onsubmit="event.preventDefault()">
+      <select class="searchbar__cat" aria-label="Category">
+        <option>All Categories</option>
+        <option>Fresh Vegetables</option>
+        <option>Fruits & Berries</option>
+        <option>Dairy & Eggs</option>
+        <option>Grains & Cereals</option>
+        <option>Bakery</option>
+        <option>Beverages</option>
+        <option>Wellness</option>
+      </select>
+      <input type="search" placeholder="Search for organic apples, almond milk, quinoa…" aria-label="Search products" />
+      <button type="submit" aria-label="Search">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+      </button>
+    </form>
+
+    <div class="header-actions">
+      <a href="#" class="header-action" aria-label="Account">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+        <span>Account</span>
+      </a>
+      <a href="#" class="header-action" aria-label="Wishlist">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.7l-1-1.1a5.5 5.5 0 1 0-7.8 7.8l1.1 1L12 21l7.7-7.6 1.1-1a5.5 5.5 0 0 0 0-7.8z"/></svg>
+        <span>Wishlist <i class="pill" data-wishlist-count>3</i></span>
+      </a>
+      <a href="#" class="header-action header-action--cart" aria-label="Cart">
+        <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.7 13.4a2 2 0 0 0 2 1.6h9.7a2 2 0 0 0 2-1.6L23 6H6"/></svg>
+        <span>Cart <b data-cart-total>$0.00</b><i class="pill" data-cart-count>0</i></span>
+      </a>
+    </div>
+  </div>
+
+  <!-- Primary nav -->
+  <nav class="nav-primary">
+    <div class="container nav-primary__inner">
+      <button class="nav-catbtn" aria-haspopup="true" aria-expanded="false">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+        Browse Categories
+      </button>
+
+      <ul class="nav-menu">
+        <li><a href="#" class="active">Home</a></li>
+        <li><a href="#shop">Shop</a></li>
+        <li class="has-mega"><a href="#">Categories ▾</a>
+          <div class="mega">
+            <div class="mega__col"><h5>Farm Fresh</h5><a href="#">Vegetables</a><a href="#">Fruits</a><a href="#">Herbs & Spices</a><a href="#">Mushrooms</a></div>
+            <div class="mega__col"><h5>Dairy & Bakery</h5><a href="#">Milk & Yogurt</a><a href="#">Cheese</a><a href="#">Eggs</a><a href="#">Artisan Breads</a></div>
+            <div class="mega__col"><h5>Pantry</h5><a href="#">Grains & Rice</a><a href="#">Pasta & Noodles</a><a href="#">Oils & Vinegar</a><a href="#">Nuts & Seeds</a></div>
+            <div class="mega__col"><h5>Wellness</h5><a href="#">Herbal Tea</a><a href="#">Honey & Syrups</a><a href="#">Supplements</a><a href="#">Essential Oils</a></div>
+          </div>
+        </li>
+        <li><a href="#deals">Deals</a></li>
+        <li><a href="#blog">Blog</a></li>
+        <li><a href="#">About</a></li>
+        <li><a href="#">Contact</a></li>
+      </ul>
+
+      <div class="nav-tel">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#0098b8" stroke-width="2"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3 19.5 19.5 0 0 1-6-6 19.8 19.8 0 0 1-3-8.6A2 2 0 0 1 4 2h3a2 2 0 0 1 2 1.7c.1.9.3 1.8.6 2.6a2 2 0 0 1-.5 2.1L7.9 9.8a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.8.2 1.7.5 2.6.6a2 2 0 0 1 1.7 2z"/></svg>
+        <div><small>24/7 Support</small><strong>+1 (800) 123-4567</strong></div>
+      </div>
+    </div>
+  </nav>
+</header>
+
+<main id="main">
+
+<!-- Hero slider -->
+<section class="hero" aria-label="Featured promotions">
+  <div class="container">
+    <div class="hero__slider">
+      <div class="slide is-active" style="background-image:url('https://images.unsplash.com/photo-1610348725531-843dff563e2c?w=1600&q=80&auto=format&fit=crop')">
+        <div class="slide__overlay"></div>
+        <div class="slide__content">
+          <small class="eyebrow">100% Certified Organic</small>
+          <h1>Fresh from the farm,<br/>straight to your table.</h1>
+          <p>Hand-picked produce from local cooperatives. No pesticides, no shortcuts — just honest food.</p>
+          <a href="#shop" class="btn btn--primary">Shop Now
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+          </a>
+        </div>
+      </div>
+      <div class="slide" style="background-image:url('https://images.unsplash.com/photo-1488459716781-31db52582fe9?w=1600&q=80&auto=format&fit=crop')">
+        <div class="slide__overlay"></div>
+        <div class="slide__content">
+          <small class="eyebrow">Seasonal Deals</small>
+          <h1>Save up to 40%<br/>on seasonal fruits.</h1>
+          <p>Juicy, sun-ripened and bursting with flavor. While stocks last.</p>
+          <a href="#deals" class="btn btn--primary">View Deals →</a>
+        </div>
+      </div>
+      <div class="slide" style="background-image:url('https://images.unsplash.com/photo-1506617420156-8e4536971650?w=1600&q=80&auto=format&fit=crop')">
+        <div class="slide__overlay"></div>
+        <div class="slide__content">
+          <small class="eyebrow">Free Delivery</small>
+          <h1>Free shipping on<br/>orders over $50.</h1>
+          <p>Same-day dispatch on orders placed before 3 PM. Cooled and cushioned.</p>
+          <a href="#shop" class="btn btn--primary">Start Shopping →</a>
+        </div>
+      </div>
+
+      <button class="slide-nav slide-nav--prev" aria-label="Previous slide">‹</button>
+      <button class="slide-nav slide-nav--next" aria-label="Next slide">›</button>
+      <div class="slide-dots" role="tablist"></div>
+    </div>
+  </div>
+</section>
+
+<!-- Feature bar -->
+<section class="features-bar" aria-label="Store benefits">
+  <div class="container features-bar__grid">
+    <div class="feature">
+      <span class="feature__icon" aria-hidden="true">
+        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="1" y="3" width="15" height="13"/><polygon points="16 8 20 8 23 11 23 16 16 16 16 8"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg>
+      </span>
+      <div><strong>Free Shipping</strong><small>On orders over $50</small></div>
+    </div>
+    <div class="feature">
+      <span class="feature__icon" aria-hidden="true">
+        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><polyline points="1 4 1 10 7 10"/><path d="M3.51 15a9 9 0 1 0 2.13-9.36L1 10"/></svg>
+      </span>
+      <div><strong>14-Day Returns</strong><small>No questions asked</small></div>
+    </div>
+    <div class="feature">
+      <span class="feature__icon" aria-hidden="true">
+        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+      </span>
+      <div><strong>Secure Payment</strong><small>Encrypted checkout</small></div>
+    </div>
+    <div class="feature">
+      <span class="feature__icon" aria-hidden="true">
+        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2C8 6 6 10 6 14a6 6 0 0 0 12 0c0-4-2-8-6-12z"/><path d="M12 22v-8"/></svg>
+      </span>
+      <div><strong>100% Organic</strong><small>Certified by USDA</small></div>
+    </div>
+    <div class="feature">
+      <span class="feature__icon" aria-hidden="true">
+        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+      </span>
+      <div><strong>24/7 Support</strong><small>Chat with us anytime</small></div>
+    </div>
+  </div>
+</section>
+
+<!-- Category circles -->
+<section class="section categories">
+  <div class="container">
+    <div class="section-head">
+      <h2>Shop by Category</h2>
+      <a href="#" class="section-more">View all →</a>
+    </div>
+    <div class="cat-grid">
+      <a class="cat" href="#"><span class="cat__img" style="background-color:#e3f6ee"><img alt="Fresh organic vegetables" loading="lazy" src="https://images.unsplash.com/photo-1518977676601-b53f82aba655?w=240&h=240&fit=crop&auto=format&q=80"/></span><strong>Vegetables</strong><small>48 items</small></a>
+      <a class="cat" href="#"><span class="cat__img" style="background-color:#fff2e0"><img alt="" src="https://images.unsplash.com/photo-1619566636858-adf3ef46400b?w=240&h=240&fit=crop&auto=format&q=80"/></span><strong>Dairy</strong><small>26 items</small></a>
+      <a class="cat" href="#"><span class="cat__img" style="background-color:#ffe7e7"><img alt="" src="https://images.unsplash.com/photo-1610832958506-aa56368176cf?w=240&h=240&fit=crop&auto=format&q=80"/></span><strong>Fruits</strong><small>52 items</small></a>
+      <a class="cat" href="#"><span class="cat__img" style="background-color:#f2ecff"><img alt="" src="https://images.unsplash.com/photo-1447175008436-054170c2e979?w=240&h=240&fit=crop&auto=format&q=80"/></span><strong>Bakery</strong><small>19 items</small></a>
+      <a class="cat" href="#"><span class="cat__img" style="background-color:#e7f3ff"><img alt="" src="https://images.unsplash.com/photo-1586201375761-83865001e31c?w=240&h=240&fit=crop&auto=format&q=80"/></span><strong>Avocado</strong><small>12 items</small></a>
+      <a class="cat" href="#"><span class="cat__img" style="background-color:#fff7d6"><img alt="" src="https://images.unsplash.com/photo-1604908176997-125f25cc6f3d?w=240&h=240&fit=crop&auto=format&q=80"/></span><strong>Honey</strong><small>14 items</small></a>
+      <a class="cat" href="#"><span class="cat__img" style="background-color:#e8faf3"><img alt="" src="https://images.unsplash.com/photo-1550583724-b2692b85b150?w=240&h=240&fit=crop&auto=format&q=80"/></span><strong>Greens</strong><small>22 items</small></a>
+      <a class="cat" href="#"><span class="cat__img" style="background-color:#ffeedf"><img alt="" src="https://images.unsplash.com/photo-1567306226416-28f0efdc88ce?w=240&h=240&fit=crop&auto=format&q=80"/></span><strong>Tomatoes</strong><small>8 items</small></a>
+      <a class="cat" href="#"><span class="cat__img" style="background-color:#e7faff"><img alt="" src="https://images.unsplash.com/photo-1542838132-92c53300491e?w=240&h=240&fit=crop&auto=format&q=80"/></span><strong>Peppers</strong><small>15 items</small></a>
+      <a class="cat" href="#"><span class="cat__img" style="background-color:#fde8f2"><img alt="" src="https://images.unsplash.com/photo-1515543237350-b3eea1ec8082?w=240&h=240&fit=crop&auto=format&q=80"/></span><strong>Citrus</strong><small>18 items</small></a>
+    </div>
+  </div>
+</section>
+
+<!-- Promo banners -->
+<section class="section promos">
+  <div class="container promos__grid">
+    <div class="promo" style="background-image:linear-gradient(120deg,rgba(0,152,184,.85),rgba(0,152,184,.25)),url('https://images.unsplash.com/photo-1542838132-92c53300491e?w=900&q=80&auto=format&fit=crop')">
+      <small>Starting From $12</small>
+      <h3>Everyday Fresh<br/>Fruits & Vegetables</h3>
+      <a href="#shop" class="btn btn--ghost">Shop Now →</a>
+    </div>
+    <div class="promo" style="background-image:linear-gradient(120deg,rgba(253,192,64,.9),rgba(253,192,64,.25)),url('https://images.unsplash.com/photo-1488459716781-31db52582fe9?w=900&q=80&auto=format&fit=crop')">
+      <small>Up to 40% Off</small>
+      <h3>Sunday Farmers<br/>Market Specials</h3>
+      <a href="#deals" class="btn btn--ghost">Shop Now →</a>
+    </div>
+    <div class="promo" style="background-image:linear-gradient(120deg,rgba(37,61,78,.9),rgba(37,61,78,.35)),url('https://images.unsplash.com/photo-1604908176997-125f25cc6f3d?w=900&q=80&auto=format&fit=crop')">
+      <small>Limited Edition</small>
+      <h3>Raw Wildflower<br/>Honey Collection</h3>
+      <a href="#shop" class="btn btn--ghost">Shop Now →</a>
+    </div>
+  </div>
+</section>
+
+<!-- Deal of the day -->
+<section class="section deals" id="deals">
+  <div class="container">
+    <div class="section-head">
+      <h2>Deal of the Day</h2>
+      <p class="section-sub">Don't wait — these prices won't last!</p>
+    </div>
+
+    <div class="deals-grid">
+      <!-- deal card 1 -->
+      <article class="deal-card" style="background-image:url('https://images.unsplash.com/photo-1542838132-92c53300491e?w=900&q=80&auto=format&fit=crop')">
+        <div class="deal-card__overlay"></div>
+        <div class="deal-card__content">
+          <h4>Organic Mixed<br/>Vegetable Box</h4>
+          <small>5-day harvest, 9 varieties</small>
+          <div class="countdown" data-countdown="36:00:00">
+            <span><b>00</b><i>Days</i></span><span><b>00</b><i>Hrs</i></span><span><b>00</b><i>Min</i></span><span><b>00</b><i>Sec</i></span>
+          </div>
+          <a href="#" class="btn btn--primary">Shop Now →</a>
+        </div>
+      </article>
+
+      <article class="deal-card" style="background-image:url('https://images.unsplash.com/photo-1610832958506-aa56368176cf?w=900&q=80&auto=format&fit=crop')">
+        <div class="deal-card__overlay"></div>
+        <div class="deal-card__content">
+          <h4>Tropical Fruit<br/>Variety Basket</h4>
+          <small>6 seasonal fruits</small>
+          <div class="countdown" data-countdown="12:30:00">
+            <span><b>00</b><i>Days</i></span><span><b>00</b><i>Hrs</i></span><span><b>00</b><i>Min</i></span><span><b>00</b><i>Sec</i></span>
+          </div>
+          <a href="#" class="btn btn--primary">Shop Now →</a>
+        </div>
+      </article>
+
+      <article class="deal-card" style="background-image:url('https://images.unsplash.com/photo-1619566636858-adf3ef46400b?w=900&q=80&auto=format&fit=crop')">
+        <div class="deal-card__overlay"></div>
+        <div class="deal-card__content">
+          <h4>Grass-Fed Whole<br/>Milk & Yogurt Set</h4>
+          <small>From local dairy farms</small>
+          <div class="countdown" data-countdown="72:00:00">
+            <span><b>00</b><i>Days</i></span><span><b>00</b><i>Hrs</i></span><span><b>00</b><i>Min</i></span><span><b>00</b><i>Sec</i></span>
+          </div>
+          <a href="#" class="btn btn--primary">Shop Now →</a>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- Popular products -->
+<section class="section products" id="shop">
+  <div class="container">
+    <div class="section-head">
+      <h2>Popular Products</h2>
+      <div class="tabs" role="tablist">
+        <button class="tab is-active" data-filter="all">All</button>
+        <button class="tab" data-filter="vegetables">Vegetables</button>
+        <button class="tab" data-filter="fruits">Fruits</button>
+        <button class="tab" data-filter="dairy">Dairy</button>
+        <button class="tab" data-filter="bakery">Bakery</button>
+      </div>
+    </div>
+
+    <div class="product-grid" id="productGrid"><!-- JS populates --></div>
+  </div>
+</section>
+
+<!-- Mid-banner -->
+<section class="section banner-wide">
+  <div class="container">
+    <div class="banner-wide__inner" style="background-image:linear-gradient(110deg,rgba(255,255,255,.92) 0%,rgba(255,255,255,.7) 55%,rgba(255,255,255,0) 85%),url('https://images.unsplash.com/photo-1506617420156-8e4536971650?w=1600&q=80&auto=format&fit=crop')">
+        <small class="eyebrow">Farm-to-Table</small>
+        <h2>Straight from the field —<br/>never from a warehouse.</h2>
+        <p>We partner with 120+ independent farms and harvest only when you order. No cold-storage, no waste.</p>
+        <a href="#" class="btn btn--primary">Meet Our Farmers →</a>
+    </div>
+  </div>
+</section>
+
+<!-- Best sellers carousel -->
+<section class="section bestsellers">
+  <div class="container">
+    <div class="section-head">
+      <h2>This Week's Best Sellers</h2>
+      <div class="carousel-ctrl">
+        <button class="carousel-btn" data-dir="-1">‹</button>
+        <button class="carousel-btn" data-dir="1">›</button>
+      </div>
+    </div>
+    <div class="bestsellers__track" id="bestsellersTrack"></div>
+  </div>
+</section>
+
+<!-- Testimonials -->
+<section class="section testimonials">
+  <div class="container">
+    <div class="section-head">
+      <h2>What Our Customers Say</h2>
+      <p class="section-sub">Real stories from real kitchens.</p>
+    </div>
+    <div class="testi-grid">
+      <figure class="testi">
+        <div class="stars" aria-label="5 stars">★★★★★</div>
+        <blockquote>The vegetables arrive looking like they were just pulled from the ground — because they were. I've stopped going to the supermarket completely.</blockquote>
+        <figcaption>
+          <img alt="" src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=120&h=120&fit=crop&auto=format&q=80"/>
+          <div><strong>Emma Richardson</strong><small>Loyal customer since 2023</small></div>
+        </figcaption>
+      </figure>
+      <figure class="testi">
+        <div class="stars">★★★★★</div>
+        <blockquote>Honest prices and excellent packaging. Their raw honey has become my morning ritual. The flavor is nothing like store-bought.</blockquote>
+        <figcaption>
+          <img alt="" src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=120&h=120&fit=crop&auto=format&q=80"/>
+          <div><strong>David Okafor</strong><small>Home chef, Brooklyn</small></div>
+        </figcaption>
+      </figure>
+      <figure class="testi">
+        <div class="stars">★★★★★</div>
+        <blockquote>I love that I know exactly which farm my eggs come from. The weekly box has made family dinners a real event again.</blockquote>
+        <figcaption>
+          <img alt="" src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=120&h=120&fit=crop&auto=format&q=80"/>
+          <div><strong>Sofia Marchetti</strong><small>Subscriber for 18 months</small></div>
+        </figcaption>
+      </figure>
+    </div>
+  </div>
+</section>
+
+<!-- Blog preview -->
+<section class="section blog" id="blog">
+  <div class="container">
+    <div class="section-head">
+      <h2>From the Journal</h2>
+      <a href="#" class="section-more">All articles →</a>
+    </div>
+    <div class="blog-grid">
+      <article class="post">
+        <a href="#" class="post__img" style="background-image:url('https://images.unsplash.com/photo-1464226184884-fa280b87c399?w=800&q=80&auto=format&fit=crop')"></a>
+        <div class="post__body">
+          <span class="post__tag">Seasonal</span>
+          <h3><a href="#">Why spring asparagus tastes better than summer's — the science of timing.</a></h3>
+          <small>By Naomi Hart · 6 min read</small>
+        </div>
+      </article>
+      <article class="post">
+        <a href="#" class="post__img" style="background-image:url('https://images.unsplash.com/photo-1615485290398-15efa7a7a4ad?w=800&q=80&auto=format&fit=crop')"></a>
+        <div class="post__body">
+          <span class="post__tag">Farm Life</span>
+          <h3><a href="#">Meet the Ortega family: four generations of regenerative farming in one valley.</a></h3>
+          <small>By Paul Mensah · 9 min read</small>
+        </div>
+      </article>
+      <article class="post">
+        <a href="#" class="post__img" style="background-image:url('https://images.unsplash.com/photo-1490645935967-10de6ba17061?w=800&q=80&auto=format&fit=crop')"></a>
+        <div class="post__body">
+          <span class="post__tag">Recipes</span>
+          <h3><a href="#">Five weeknight dinners that turn farm-box surplus into something crave-worthy.</a></h3>
+          <small>By Lila Song · 4 min read</small>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- Newsletter -->
+<section class="newsletter">
+  <div class="container newsletter__inner">
+    <div class="newsletter__text">
+      <h2>Join the GreenKart Kitchen</h2>
+      <p>Weekly seasonal recipes, subscriber-only discounts, and stories from our farmers — straight to your inbox.</p>
+    </div>
+    <form class="newsletter__form" onsubmit="event.preventDefault(); this.querySelector('button').textContent='Subscribed ✓'">
+      <input type="email" placeholder="your@email.com" required />
+      <button type="submit" class="btn btn--primary">Subscribe</button>
+    </form>
+  </div>
+</section>
+
+</main>
+
+<!-- Footer -->
+<footer class="site-footer">
+  <div class="container site-footer__grid">
+    <div class="footer-col">
+      <a class="brand brand--dark" href="#">
+        <span class="brand__leaf"><svg width="32" height="32" viewBox="0 0 24 24" fill="none"><path d="M17 8C8 10 5.9 16.17 3.82 21.34L5.71 22L6.66 19.7C7.14 19.87 7.64 20 8 20C19 20 22 3 22 3C21 5 14 5.25 9 6.25C4 7.25 2 11.5 2 13.5C2 15.5 3.75 17.25 3.75 17.25C7 8 17 8 17 8Z" fill="#0098b8"/></svg></span>
+        <span class="brand__text">Green<span>Kart</span></span>
+      </a>
+      <p>Small-batch organic groceries, shipped same-day from farms within 200 miles of your door.</p>
+      <ul class="footer-contact">
+        <li><b>Address:</b> 482 Maple Grove Rd, Burlington, VT 05401</li>
+        <li><b>Call:</b> +1 (800) 123-4567</li>
+        <li><b>Email:</b> hello@greenkart.demo</li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h5>Company</h5>
+      <ul><li><a href="#">About Us</a></li><li><a href="#">Our Farms</a></li><li><a href="#">Careers</a></li><li><a href="#">Press</a></li><li><a href="#">Sustainability</a></li></ul>
+    </div>
+    <div class="footer-col">
+      <h5>Account</h5>
+      <ul><li><a href="#">Sign In</a></li><li><a href="#">View Cart</a></li><li><a href="#">My Orders</a></li><li><a href="#">Wishlist</a></li><li><a href="#">Track Order</a></li></ul>
+    </div>
+    <div class="footer-col">
+      <h5>Customer Care</h5>
+      <ul><li><a href="#">Help Center</a></li><li><a href="#">Shipping Info</a></li><li><a href="#">Returns</a></li><li><a href="#">Size Guide</a></li><li><a href="#">Contact</a></li></ul>
+    </div>
+    <div class="footer-col">
+      <h5>Install our app</h5>
+      <p>From App Store or Google Play.</p>
+      <div class="app-badges">
+        <a href="#" class="badge-btn">▶ Google Play</a>
+        <a href="#" class="badge-btn"> App Store</a>
+      </div>
+      <p style="margin-top:18px"><b>Secured payment by</b></p>
+      <div class="pay-badges">VISA · MASTERCARD · PAYPAL · AMEX</div>
+    </div>
+  </div>
+  <div class="site-footer__bottom">
+    <div class="container site-footer__bottom-inner">
+      <small>© 2026 GreenKart Organics — a demo storefront built for design review. Not a real retailer.</small>
+      <div class="socials">
+        <a href="#" aria-label="Facebook"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg></a>
+        <a href="#" aria-label="Twitter"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M18.9 3h3.3l-7.2 8.2L23.5 21h-6.6l-5.2-6.8L5.6 21H2.3l7.7-8.8L1.8 3h6.8l4.7 6.2zm-1.2 16h1.8L7.4 4.9H5.5z"/></svg></a>
+        <a href="#" aria-label="Instagram"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.4a4 4 0 1 1-7.9 1.2 4 4 0 0 1 7.9-1.2z"/><line x1="17.5" y1="6.5" x2="17.5" y2="6.5"/></svg></a>
+        <a href="#" aria-label="YouTube"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M22.5 6.4a2.8 2.8 0 0 0-2-2C18.8 4 12 4 12 4s-6.8 0-8.5.4a2.8 2.8 0 0 0-2 2A29 29 0 0 0 1 12a29 29 0 0 0 .5 5.6 2.8 2.8 0 0 0 2 2C5.2 20 12 20 12 20s6.8 0 8.5-.4a2.8 2.8 0 0 0 2-2A29 29 0 0 0 23 12a29 29 0 0 0-.5-5.6zM9.8 15.3V8.7l5.7 3.3z"/></svg></a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<!-- Cart drawer -->
+<aside class="cart-drawer" id="cartDrawer" aria-hidden="true">
+  <div class="cart-drawer__head">
+    <h3>Your Cart</h3>
+    <button class="cart-drawer__close" aria-label="Close cart">×</button>
+  </div>
+  <div class="cart-drawer__body" id="cartBody"><p class="cart-empty">Your cart is empty.</p></div>
+  <div class="cart-drawer__foot">
+    <div class="cart-drawer__total"><span>Total</span><b data-cart-total-drawer>$0.00</b></div>
+    <a href="#" class="btn btn--primary" style="width:100%">Checkout →</a>
+  </div>
+</aside>
+<div class="cart-scrim" id="cartScrim"></div>
+
+<!-- Toast -->
+<div class="toast" id="toast" role="status" aria-live="polite" aria-atomic="true"></div>
+
+<script src="script.js"></script>
+</body>
+</html>
