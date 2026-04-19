@@ -118,7 +118,14 @@
 
   <article class="featured__grid">
     <figure class="featured__figure">
-      <img src="https://images.unsplash.com/photo-1610832958506-aa56368176cf?w=1200&q=85&auto=format&fit=crop" alt="A glass bowl of ripe wild blueberries with stems still attached, on an unfinished wooden surface." />
+      <div class="specimen3d" data-specimen-3d>
+        <img class="specimen3d__fallback"
+             src="https://images.unsplash.com/photo-1498557850523-fd3d118b962e?w=1200&q=85&auto=format&fit=crop"
+             alt="Closely framed ripe wild blueberries on linen." />
+        <canvas class="specimen3d__canvas" aria-label="Three-dimensional study specimen. Click and drag to rotate."></canvas>
+        <span class="specimen3d__hint mono" aria-hidden="true">drag · inspect</span>
+        <span class="specimen3d__badge mono" aria-hidden="true">3D</span>
+      </div>
       <figcaption><span class="mono">pl.&nbsp;iii</span><span>Vaccinium — undomesticated hillside clone, 11 days post-harvest</span></figcaption>
     </figure>
     <div class="featured__body">

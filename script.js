@@ -172,10 +172,50 @@ function toast(msg) {
   toastTimer = setTimeout(() => el.classList.remove('is-show'), 2400);
 }
 
+/* -------- 3D specimen lazy loader --------
+   Only loads Three.js once the Specimen of the Week spread
+   approaches the viewport. Gracefully falls back to the static
+   photo if WebGL is unavailable or the module fails to load. */
+function init3DSpecimen() {
+  const wrap = document.querySelector('[data-specimen-3d]');
+  if (!wrap) return;
+
+  // Skip on very small screens (mobile) — the static image reads better.
+  if (window.matchMedia('(max-width: 600px)').matches) return;
+
+  // Respect reduced-data preference
+  const conn = navigator.connection;
+  if (conn && (conn.saveData || /2g/.test(conn.effectiveType || ''))) return;
+
+  // Bail if WebGL isn't available
+  try {
+    const test = document.createElement('canvas');
+    const gl = test.getContext('webgl2') || test.getContext('webgl');
+    if (!gl) return;
+  } catch (_) { return; }
+
+  const trigger = () => {
+    import('./specimen-3d.js')
+      .then(mod => mod.createSpecimenScene(wrap))
+      .catch(err => console.warn('3D specimen skipped:', err));
+  };
+
+  // Use IntersectionObserver to defer until near viewport
+  if ('IntersectionObserver' in window) {
+    const io = new IntersectionObserver((entries, o) => {
+      if (entries[0].isIntersecting) { o.disconnect(); trigger(); }
+    }, { rootMargin: '200px' });
+    io.observe(wrap);
+  } else {
+    trigger();
+  }
+}
+
 /* -------- Boot -------- */
 document.addEventListener('DOMContentLoaded', () => {
   renderBento('all');
   initFilter();
   initCart();
   renderCart();
+  init3DSpecimen();
 });

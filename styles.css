@@ -296,6 +296,52 @@ ul, ol { margin: 0; padding: 0; list-style: none; }
   width: 100%; aspect-ratio: 4/5; object-fit: cover;
   background: var(--paper-deep);
 }
+
+/* ---- 3D specimen viewer ---- */
+.specimen3d {
+  position: relative;
+  aspect-ratio: 4/5;
+  background: linear-gradient(160deg, #f0e9d2 0%, #e5dcbf 100%);
+  border: 1px solid var(--paper-edge);
+  overflow: hidden;
+}
+.specimen3d__fallback {
+  position: absolute; inset: 0;
+  width: 100% !important; height: 100% !important;
+  aspect-ratio: auto !important;
+  object-fit: cover;
+  transition: opacity 700ms ease;
+}
+.specimen3d.is-3d-ready .specimen3d__fallback { opacity: 0; }
+.specimen3d__canvas {
+  position: absolute; inset: 0;
+  width: 100%; height: 100%;
+  opacity: 0; transition: opacity 700ms ease;
+  display: block;
+}
+.specimen3d.is-3d-ready .specimen3d__canvas { opacity: 1; }
+.specimen3d__hint {
+  position: absolute; left: 14px; bottom: 14px; z-index: 2;
+  padding: 4px 9px; background: rgba(244,240,227,.88);
+  color: var(--ink); font-size: 10px;
+  opacity: 0; transition: opacity 500ms ease 400ms;
+  pointer-events: none;
+  border: 1px solid var(--rule-soft);
+}
+.specimen3d__badge {
+  position: absolute; right: 14px; top: 14px; z-index: 2;
+  padding: 3px 8px; background: var(--ink); color: var(--paper);
+  font-size: 10px; font-weight: 600; letter-spacing: .18em;
+  opacity: 0; transition: opacity 500ms ease 300ms;
+  pointer-events: none;
+}
+.specimen3d.is-3d-ready .specimen3d__hint,
+.specimen3d.is-3d-ready .specimen3d__badge { opacity: 1; }
+
+/* If 3D can't load, the fallback image stays at full opacity. */
+@media (prefers-reduced-motion: reduce) {
+  .specimen3d__canvas { transition: none; }
+}
 .featured__figure figcaption {
   display: flex; justify-content: space-between; gap: 20px;
   margin-top: 10px;
