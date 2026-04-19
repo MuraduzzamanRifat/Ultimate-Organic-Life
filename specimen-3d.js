@@ -217,8 +217,7 @@ export function createSpecimenScene(wrap) {
   }
   requestAnimationFrame(animate);
 
-  /* ---- Mark ready and return disposer ---- */
-  requestAnimationFrame(() => wrap.classList.add('is-3d-ready'));
+  /* ---- Visibility is controlled by the .is-3d-on toggle in CSS. ---- */
 
   return function dispose() {
     running = false;

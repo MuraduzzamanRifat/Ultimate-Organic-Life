@@ -3,288 +3,228 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>GreenKart Organics — Field Study, Vol. 1</title>
-<meta name="description" content="A quarterly field journal of living, certified-organic produce, grains, and wellness goods — harvested, catalogued, and delivered." />
+<title>GreenKart Organics</title>
+<meta name="description" content="Organic groceries from small farms. Harvested weekly, delivered to your door." />
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght,SOFT@9..144,300;9..144,400;9..144,500;9..144,600;9..144,700;9..144,800;9..144,900&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght,SOFT@9..144,300;9..144,400;9..144,500&family=Inter:wght@300;400;500&display=swap" rel="stylesheet" />
 <link rel="stylesheet" href="styles.css" />
 </head>
-<body class="paper">
+<body>
 
-<a class="skip-link" href="#opening">Skip to contents</a>
+<a class="skip" href="#main">Skip to content</a>
 
-<!-- ========= Masthead ========= -->
-<header class="masthead">
-  <div class="masthead__row">
-    <span class="masthead__meta masthead__meta--left">
-      <span>Vol. 01</span><span class="dot">·</span><span>Issue IV</span><span class="dot">·</span><span>Spring · MMXXVI</span>
-    </span>
-    <span class="masthead__meta masthead__meta--right">
-      <a href="#">Stockists</a><span class="dot">·</span><a href="#">Journal</a><span class="dot">·</span><a href="#">Subscribe</a>
-    </span>
-  </div>
-  <div class="masthead__rule" aria-hidden="true"></div>
-  <div class="masthead__title">
-    <span class="masthead__subtitle">The Field Study, a quarterly by</span>
-    <a href="#" class="wordmark" aria-label="GreenKart Organics">
-      <svg class="wordmark__mark" viewBox="0 0 64 64" width="44" height="44" aria-hidden="true">
-        <circle cx="32" cy="32" r="30" fill="none" stroke="currentColor" stroke-width="1.2"/>
-        <path d="M32 14 C 22 22, 22 36, 32 50 C 42 36, 42 22, 32 14 Z" fill="none" stroke="currentColor" stroke-width="1.4"/>
-        <path d="M32 14 L 32 50" stroke="currentColor" stroke-width="1.2"/>
-        <path d="M26 28 L 32 32 M38 28 L 32 32 M26 38 L 32 42 M38 38 L 32 42" stroke="currentColor" stroke-width="1"/>
-      </svg>
-      <span class="wordmark__text">GreenKart<span class="wordmark__amp">&nbsp;·&nbsp;</span><em>Organics</em></span>
-    </a>
-    <span class="masthead__subtitle">harvested · catalogued · delivered</span>
-  </div>
-  <div class="masthead__rule" aria-hidden="true"></div>
-  <div class="masthead__row masthead__nav">
-    <nav class="toc" aria-label="Table of contents">
-      <a href="#catalogue">I · Catalogue</a>
-      <a href="#specimens">II · Specimens</a>
-      <a href="#provenance">III · Provenance</a>
-      <a href="#notes">IV · Field Notes</a>
-      <a href="#ledger">V · Ledger</a>
-    </nav>
-    <div class="util">
-      <button class="util__btn" aria-label="Search"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.35-4.35"/></svg><span>Search</span></button>
-      <button class="util__btn util__btn--cart" aria-label="Cart" id="openCart">
-        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M5 7h15l-1.5 11a2 2 0 0 1-2 1.7H8.5a2 2 0 0 1-2-1.7L5 7z"/><path d="M9 7V5a3 3 0 0 1 6 0v2"/></svg>
-        <span>Ledger</span><em class="util__count" data-cart-count>0</em>
-      </button>
-    </div>
+<header class="nav">
+  <a href="#" class="brand" aria-label="GreenKart Organics — home">
+    <svg viewBox="0 0 40 40" width="26" height="26" aria-hidden="true">
+      <path d="M20 7 C 13 13, 13 25, 20 33 C 27 25, 27 13, 20 7 Z" fill="none" stroke="currentColor" stroke-width="1.1"/>
+      <path d="M20 7 L 20 33" stroke="currentColor" stroke-width="1.1"/>
+    </svg>
+    <span>GreenKart</span>
+  </a>
+  <nav aria-label="Primary">
+    <a href="#shop">Shop</a>
+    <a href="#featured">Featured</a>
+    <a href="#story">Our story</a>
+    <a href="#contact">Contact</a>
+  </nav>
+  <div class="nav__actions">
+    <button type="button" class="nav__search" aria-label="Search">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.35-4.35"/></svg>
+    </button>
+    <button type="button" class="nav__cart" id="openCart" aria-label="Cart">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M5 7h15l-1.5 11a2 2 0 0 1-2 1.7H8.5a2 2 0 0 1-2-1.7L5 7z"/><path d="M9 7V5a3 3 0 0 1 6 0v2"/></svg>
+      <span>Bag<em data-cart-count>0</em></span>
+    </button>
   </div>
 </header>
 
-<main>
+<main id="main">
 
-<!-- ========= I · Opening spread ========= -->
-<section class="spread opening" id="opening">
-  <span class="folio">— 01 —</span>
-  <div class="opening__grid">
-    <aside class="opening__aside">
-      <p class="overline">The opening letter</p>
-      <p class="dropcap">
-        <span class="cap">W</span>hat follows is not a catalogue of goods so much as a record of a season. A quiet inventory of what has been pulled from the ground, cultured, pressed, or baked within two hundred miles of this page. Each entry carries its pedigree. Each price is an honest promise. Nothing has been polished for the camera.
-      </p>
-      <p class="caption">— The editors, in the office above the glasshouse.</p>
-    </aside>
+<!-- =========== Hero =========== -->
+<section class="hero" aria-label="Featured">
+  <img class="hero__img"
+       src="https://images.unsplash.com/photo-1542838132-92c53300491e?w=2000&q=85&auto=format&fit=crop"
+       alt="Freshly harvested vegetables in a wooden crate."
+       fetchpriority="high" />
+  <div class="hero__overlay"></div>
+  <div class="hero__content">
+    <p class="eyebrow reveal">Spring harvest · 2026</p>
+    <h1 class="reveal reveal--delay">Small farms.<br/>Honest food.</h1>
+    <p class="hero__lede reveal reveal--delay-2">Groceries grown within a day's drive of your table.</p>
+    <a class="btn btn--ghost reveal reveal--delay-3" href="#shop">Shop the harvest</a>
+  </div>
+  <a href="#intro" class="hero__scroll" aria-label="Scroll down">
+    <svg width="14" height="24" viewBox="0 0 14 24" fill="none" stroke="currentColor" stroke-width="1"><rect x="0.5" y="0.5" width="13" height="23" rx="6.5"/><line x1="7" y1="5" x2="7" y2="10"/></svg>
+  </a>
+</section>
 
-    <figure class="opening__figure">
-      <img src="https://images.unsplash.com/photo-1464965911861-746a04b4bca6?w=1200&q=85&auto=format&fit=crop" alt="A shallow wooden crate of just-harvested mixed vegetables and herbs, photographed on a linen cloth." loading="eager" />
-      <figcaption>
-        <span class="mono">plate&nbsp;·&nbsp;i</span>
-        <span>Morning harvest, glasshouse east, <time datetime="2026-04-17">17 April 2026</time>.</span>
-      </figcaption>
-    </figure>
+<!-- =========== Intro =========== -->
+<section class="intro reveal" id="intro">
+  <p class="intro__tag">Est. 2023 · Burlington, Vermont</p>
+  <p class="intro__body">
+    We work with a hundred and twenty small farms across the Northeast. Nothing travels further than it has to.
+    Nothing is stored longer than it wants to be. What arrives at your door is what we'd bring home to ours.
+  </p>
+</section>
 
-    <div class="opening__stats">
-      <div class="stat"><em>120</em><span>farms in the cooperative</span></div>
-      <div class="stat"><em>48 h</em><span>from field to door</span></div>
-      <div class="stat"><em>0</em><span>cold-storage intermediaries</span></div>
-      <div class="stat"><em>iv</em><span>issues published to date</span></div>
-    </div>
+<!-- =========== Three columns (values) =========== -->
+<section class="values">
+  <div class="values__col reveal">
+    <span class="values__num">01</span>
+    <h3>Harvested, not warehoused.</h3>
+    <p>Produce is picked to order each week. We don't hold it in a freezer waiting for your click.</p>
+  </div>
+  <div class="values__col reveal reveal--delay">
+    <span class="values__num">02</span>
+    <h3>Certified, not suggested.</h3>
+    <p>Every grower in our network holds an independent organic certification. Ask, and we'll send the paperwork.</p>
+  </div>
+  <div class="values__col reveal reveal--delay-2">
+    <span class="values__num">03</span>
+    <h3>Priced, not marked up.</h3>
+    <p>We take ten percent. Farmers take the rest. You pay what the food is worth — not what a chain can squeeze.</p>
   </div>
 </section>
 
-<!-- ========= II · Catalogue index ========= -->
-<section class="spread catalogue-index" id="catalogue">
-  <span class="folio">— 02 —</span>
-  <header class="spread__head">
-    <h2>The Catalogue</h2>
-    <p class="spread__kicker">Eight living chapters, listed in the order the season offered them.</p>
-  </header>
-
-  <ol class="chapters">
-    <li><a href="#"><span class="ch-num">i</span><span class="ch-name">Roots &amp; Brassicas</span><span class="ch-count">48</span><span class="ch-arrow">→</span></a></li>
-    <li><a href="#"><span class="ch-num">ii</span><span class="ch-name">Stone &amp; Pome Fruit</span><span class="ch-count">52</span><span class="ch-arrow">→</span></a></li>
-    <li><a href="#"><span class="ch-num">iii</span><span class="ch-name">Leaf, Herb &amp; Allium</span><span class="ch-count">34</span><span class="ch-arrow">→</span></a></li>
-    <li><a href="#"><span class="ch-num">iv</span><span class="ch-name">Dairy &amp; the Henhouse</span><span class="ch-count">26</span><span class="ch-arrow">→</span></a></li>
-    <li><a href="#"><span class="ch-num">v</span><span class="ch-name">Grains, Oats &amp; Flour</span><span class="ch-count">19</span><span class="ch-arrow">→</span></a></li>
-    <li><a href="#"><span class="ch-num">vi</span><span class="ch-name">Fermented &amp; Preserved</span><span class="ch-count">22</span><span class="ch-arrow">→</span></a></li>
-    <li><a href="#"><span class="ch-num">vii</span><span class="ch-name">Honey, Syrup &amp; Apiary</span><span class="ch-count">14</span><span class="ch-arrow">→</span></a></li>
-    <li><a href="#"><span class="ch-num">viii</span><span class="ch-name">Botanicals &amp; Tisanes</span><span class="ch-count">18</span><span class="ch-arrow">→</span></a></li>
-  </ol>
-</section>
-
-<!-- ========= III · Featured specimen ========= -->
-<section class="spread featured" id="specimens">
-  <span class="folio">— 03 —</span>
-  <header class="spread__head">
-    <h2>Specimen of the Week</h2>
-    <p class="spread__kicker">A single subject, studied at length.</p>
-  </header>
-
-  <article class="featured__grid">
-    <figure class="featured__figure">
-      <div class="specimen3d" data-specimen-3d>
-        <img class="specimen3d__fallback"
-             src="https://images.unsplash.com/photo-1498557850523-fd3d118b962e?w=1200&q=85&auto=format&fit=crop"
-             alt="Closely framed ripe wild blueberries on linen." />
-        <canvas class="specimen3d__canvas" aria-label="Three-dimensional study specimen. Click and drag to rotate."></canvas>
-        <span class="specimen3d__hint mono" aria-hidden="true">drag · inspect</span>
-        <span class="specimen3d__badge mono" aria-hidden="true">3D</span>
-      </div>
-      <figcaption><span class="mono">pl.&nbsp;iii</span><span>Vaccinium — undomesticated hillside clone, 11 days post-harvest</span></figcaption>
-    </figure>
-    <div class="featured__body">
-      <p class="overline">Entry nº 027</p>
-      <h3 class="featured__title">Wild Hillside Blueberries</h3>
-      <p class="featured__latin"><em>Vaccinium corymbosum</em> — uncultivated clone, Hardwick Ridge</p>
-      <p class="featured__prose">
-        Picked by the Abernathy family before the birds could find them, these berries are smaller,
-        darker, and more acid than their supermarket cousins. They stain linen generously and pair
-        with stone fruit, lemon thyme, and an old fashioned. We sold out last season in nine days.
-      </p>
-      <dl class="specimen-meta">
-        <div><dt>Harvest</dt><dd>15 April 2026</dd></div>
-        <div><dt>Origin</dt><dd>Hardwick, VT</dd></div>
-        <div><dt>Weight</dt><dd>125 g punnet</dd></div>
-        <div><dt>Keeps</dt><dd>≤ 6 days, chilled</dd></div>
-      </dl>
-      <div class="featured__foot">
-        <span class="price"><b>$6.25</b><s>$8.00</s></span>
-        <button class="btn btn--ink" data-add="99">Place in ledger</button>
-      </div>
+<!-- =========== Featured specimen (quiet) =========== -->
+<section class="featured reveal" id="featured">
+  <div class="featured__image">
+    <div class="specimen3d" data-specimen-3d>
+      <img class="specimen3d__fallback"
+           src="https://images.unsplash.com/photo-1498557850523-fd3d118b962e?w=1600&q=85&auto=format&fit=crop"
+           alt="Wild blueberries in a shallow dish, photographed in soft daylight." />
+      <canvas class="specimen3d__canvas" aria-label="Three-dimensional study — drag to rotate."></canvas>
+      <button type="button" class="specimen3d__toggle" data-3d-toggle aria-pressed="false">
+        <span class="specimen3d__toggle-txt">View in 3D</span>
+      </button>
     </div>
-  </article>
-</section>
-
-<!-- ========= IV · Asymmetric catalogue bento ========= -->
-<section class="spread bento" id="provenance">
-  <span class="folio">— 04 —</span>
-  <header class="spread__head">
-    <h2>The Running Catalogue</h2>
-    <p class="spread__kicker">Current inventory, asymmetrically arranged by pull of the eye.</p>
-    <div class="bento__filter">
-      <button class="chip is-active" data-filter="all">All</button>
-      <button class="chip" data-filter="vegetables">Vegetables</button>
-      <button class="chip" data-filter="fruits">Fruits</button>
-      <button class="chip" data-filter="dairy">Dairy</button>
-      <button class="chip" data-filter="bakery">Bakery</button>
+  </div>
+  <div class="featured__text">
+    <p class="eyebrow">This week</p>
+    <h2>Wild hillside<br/>blueberries.</h2>
+    <p>
+      Picked before the birds find them, small, dark and acid — the way a berry is supposed
+      to taste before breeding made them sweet. In punnets of a hundred and twenty-five grams.
+    </p>
+    <div class="featured__price">
+      <span><b>$6.25</b><s>$8.00</s></span>
+      <span class="featured__meta">125 g · Hardwick, VT · 15 April</span>
     </div>
-  </header>
-
-  <div class="bento-grid" id="bentoGrid"><!-- populated by script --></div>
-</section>
-
-<!-- ========= V · Provenance essay ========= -->
-<section class="spread essay" id="notes">
-  <span class="folio">— 05 —</span>
-  <div class="essay__grid">
-    <aside class="essay__side">
-      <p class="overline">Field Note nº 014</p>
-      <p class="mono">Filed from Ortega Farm, Sonoma Co.<br/>By P. Mensah</p>
-      <blockquote class="pull-quote">
-        &ldquo;We harvest on the morning the sky tells us to. The calendar is a suggestion; the weather is the boss.&rdquo;
-      </blockquote>
-      <p class="caption">— Ana Ortega, third-generation grower, over coffee at 6:14 a.m.</p>
-    </aside>
-    <div class="essay__body">
-      <h3>Four generations, one valley, and an argument about soil.</h3>
-      <p>
-        The Ortega farm sits in a crease between two hills that the Mission Blue butterfly also happens to
-        favour. Ana&rsquo;s grandfather first planted there in 1953, on land that had been considered too rocky to
-        be useful. The family took their first certified-organic crop to market in 1984, at a time when the
-        word still confused buyers, and have not looked back since.
-      </p>
-      <p>
-        What makes their produce peculiar — a word Ana uses with obvious affection — is a soil amendment
-        programme that has been refined over seventy years of trial, argument, and the occasional shouting
-        match at the dinner table. The result is a tomato that tastes of sunshine and a little of iron, a
-        courgette with a hollow resonance when tapped, and a squash blossom so fragile it must be packed in
-        single layers and driven directly.
-      </p>
-      <p class="essay__more"><a href="#">Read the full field note →</a></p>
-    </div>
+    <button type="button" class="btn btn--ink" data-add="99">Add to bag</button>
   </div>
 </section>
 
-<!-- ========= VI · Ledger / newsletter ========= -->
-<section class="spread ledger" id="ledger">
-  <span class="folio">— 06 —</span>
-  <div class="ledger__grid">
-    <div class="ledger__pitch">
-      <p class="overline">The Ledger</p>
-      <h3>A quarterly posted by hand.</h3>
-      <p>
-        One issue, four times a year. Seasonal recipes, the current catalogue, a field note or two,
-        and a running account of what is in and out of season on our cooperative farms. No ads.
-      </p>
-      <form class="subscribe" onsubmit="event.preventDefault(); this.querySelector('button').textContent='Added to the rolls ✓';">
-        <label class="sr-only" for="sub-email">Your email address</label>
-        <input type="email" id="sub-email" required placeholder="your@address" />
-        <button type="submit" class="btn btn--ink">Enrol</button>
-      </form>
-      <p class="ledger__fineprint">We publish on the first Saturday of each season · unsubscribe at will.</p>
+<!-- =========== Shop grid =========== -->
+<section class="shop" id="shop">
+  <header class="shop__head">
+    <h2>The harvest</h2>
+    <div class="shop__filter">
+      <button class="f is-active" data-filter="all">All</button>
+      <button class="f" data-filter="vegetables">Vegetables</button>
+      <button class="f" data-filter="fruits">Fruits</button>
+      <button class="f" data-filter="dairy">Dairy</button>
+      <button class="f" data-filter="bakery">Bakery</button>
     </div>
+  </header>
 
-    <aside class="ledger__stats">
-      <header><span class="mono">Colophon</span></header>
-      <dl>
-        <div><dt>Subscribers</dt><dd>14,208</dd></div>
-        <div><dt>Countries served</dt><dd>3</dd></div>
-        <div><dt>Average parcel</dt><dd>6.4 kg</dd></div>
-        <div><dt>Return rate</dt><dd>0.3%</dd></div>
-        <div><dt>Carbon / order</dt><dd>—1.1 kg</dd></div>
-        <div><dt>Longest tenure</dt><dd>4 yrs</dd></div>
-      </dl>
-    </aside>
+  <div class="shop__grid" id="shopGrid"></div>
+</section>
+
+<!-- =========== Quote =========== -->
+<section class="quote reveal">
+  <figure>
+    <blockquote>
+      "It tastes like food used to taste. That's the only review I have."
+    </blockquote>
+    <figcaption>— Anya L., subscriber since January</figcaption>
+  </figure>
+</section>
+
+<!-- =========== Story =========== -->
+<section class="story" id="story">
+  <div class="story__img">
+    <img src="https://images.unsplash.com/photo-1615485290398-15efa7a7a4ad?w=1400&q=85&auto=format&fit=crop"
+         alt="A farmer inspecting a tray of young plants in a glasshouse." loading="lazy" />
   </div>
+  <div class="story__text reveal">
+    <p class="eyebrow">Our story</p>
+    <h2>A short one.</h2>
+    <p>
+      We began with a station wagon and six regular customers. Two years on there are fourteen thousand of you,
+      a hundred and twenty farms, and the station wagon is retired.
+    </p>
+    <p>
+      What hasn't changed: we answer the phone ourselves, the food is picked the same week it lands on your table,
+      and our farmers know your order matters to their month.
+    </p>
+    <a class="link" href="#">Read the long version →</a>
+  </div>
+</section>
+
+<!-- =========== Newsletter =========== -->
+<section class="newsletter" id="contact">
+  <h2>A quiet letter,<br/>four times a year.</h2>
+  <p>Seasonal arrivals, the occasional recipe, nothing else.</p>
+  <form onsubmit="event.preventDefault();this.querySelector('button').textContent='Thank you.';this.querySelector('input').value='';">
+    <input type="email" required placeholder="Email address" aria-label="Email address" />
+    <button class="btn btn--ink" type="submit">Subscribe</button>
+  </form>
 </section>
 
 </main>
 
-<!-- ========= Footer / Colophon ========= -->
-<footer class="colophon">
-  <div class="colophon__rule"></div>
-  <div class="colophon__grid">
-    <div class="colophon__brand">
-      <svg viewBox="0 0 64 64" width="40" height="40" aria-hidden="true">
-        <circle cx="32" cy="32" r="30" fill="none" stroke="currentColor" stroke-width="1.2"/>
-        <path d="M32 14 C 22 22, 22 36, 32 50 C 42 36, 42 22, 32 14 Z" fill="none" stroke="currentColor" stroke-width="1.4"/>
-        <path d="M32 14 L 32 50" stroke="currentColor" stroke-width="1.2"/>
+<!-- =========== Footer =========== -->
+<footer class="foot">
+  <div class="foot__top">
+    <a href="#" class="brand brand--foot">
+      <svg viewBox="0 0 40 40" width="22" height="22" aria-hidden="true">
+        <path d="M20 7 C 13 13, 13 25, 20 33 C 27 25, 27 13, 20 7 Z" fill="none" stroke="currentColor" stroke-width="1.1"/>
+        <path d="M20 7 L 20 33" stroke="currentColor" stroke-width="1.1"/>
       </svg>
-      <p class="colophon__tagline">A field journal of living produce, published quarterly since <time>2023</time>.</p>
-    </div>
-    <div>
-      <h6>Correspondence</h6>
-      <p>482 Maple Grove Rd<br/>Burlington, VT 05401<br/><a href="mailto:hello@greenkart.demo">hello@greenkart.demo</a></p>
-    </div>
-    <div>
-      <h6>Index</h6>
-      <ul><li><a href="#">Our farms</a></li><li><a href="#">Subscriptions</a></li><li><a href="#">Return a parcel</a></li><li><a href="#">Press</a></li></ul>
-    </div>
-    <div>
-      <h6>Attribution</h6>
-      <p class="mono"><small>
-        Set in Fraunces &amp; Inter with JetBrains Mono. Imagery under Unsplash licence.
-        Presented here as a demo — not a live retailer.
-      </small></p>
+      <span>GreenKart</span>
+    </a>
+    <div class="foot__cols">
+      <div>
+        <h6>Shop</h6>
+        <a href="#">Vegetables</a><a href="#">Fruits</a><a href="#">Dairy</a><a href="#">Bakery</a>
+      </div>
+      <div>
+        <h6>Company</h6>
+        <a href="#">Our farms</a><a href="#">Sustainability</a><a href="#">Press</a><a href="#">Careers</a>
+      </div>
+      <div>
+        <h6>Help</h6>
+        <a href="#">Shipping</a><a href="#">Returns</a><a href="#">Contact</a><a href="#">Account</a>
+      </div>
+      <div>
+        <h6>Contact</h6>
+        <a href="mailto:hello@greenkart.demo">hello@greenkart.demo</a>
+        <a href="tel:+18001234567">+1 800 123 4567</a>
+        <span class="foot__addr">482 Maple Grove Rd<br/>Burlington, VT 05401</span>
+      </div>
     </div>
   </div>
-  <div class="colophon__bottom">
-    <span class="mono">© MMXXVI · Vol. 01, Iss. IV</span>
-    <span class="mono">Printed &amp; coded with care · Burlington, VT</span>
+  <div class="foot__bot">
+    <small>© 2026 GreenKart Organics · A design demo, not a live retailer.</small>
+    <small>Hand-coded · Burlington, VT</small>
   </div>
 </footer>
 
-<!-- ========= Cart (Ledger) drawer ========= -->
-<aside class="drawer" id="cartDrawer" aria-hidden="true" aria-label="Your ledger">
+<!-- Cart drawer -->
+<aside class="drawer" id="cartDrawer" aria-hidden="true" aria-label="Your bag">
   <header class="drawer__head">
-    <span class="mono">The Ledger</span>
-    <button class="drawer__close" aria-label="Close">Close ✕</button>
+    <span>Your bag</span>
+    <button class="drawer__close" aria-label="Close">Close</button>
   </header>
-  <div class="drawer__body" id="cartBody"><p class="drawer__empty">Nothing entered yet.</p></div>
+  <div class="drawer__body" id="cartBody"><p class="drawer__empty">Your bag is empty.</p></div>
   <footer class="drawer__foot">
-    <div class="drawer__total"><span>Sub-total</span><b data-cart-total-drawer>$0.00</b></div>
-    <a href="#" class="btn btn--ink btn--block">Settle the ledger →</a>
+    <div class="drawer__total"><span>Subtotal</span><b data-cart-total-drawer>$0.00</b></div>
+    <a href="#" class="btn btn--ink btn--block">Checkout</a>
   </footer>
 </aside>
 <div class="scrim" id="cartScrim"></div>
 
-<!-- Toast -->
 <div class="toast" id="toast" role="status" aria-live="polite" aria-atomic="true"></div>
 
 <script src="script.js"></script>
