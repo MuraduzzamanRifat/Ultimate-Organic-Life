@@ -127,6 +127,24 @@ function renderCart() {
   }
   $$('[data-cart-total-drawer]').forEach(e => e.textContent = fmt(total));
   $$('[data-cart-count]').forEach(e => e.textContent = count);
+
+  // Free-shipping progress
+  const bar  = $('#shipBar');
+  const msg  = $('#shipMsg');
+  const fill = $('#shipFill');
+  if (bar && msg && fill) {
+    const threshold = Number(bar.dataset.threshold || 50);
+    const remaining = Math.max(0, threshold - total);
+    const pct = Math.min(100, (total / threshold) * 100);
+    fill.style.width = pct + '%';
+    if (remaining <= 0) {
+      msg.innerHTML = '<strong>Free shipping unlocked.</strong> Fewer trucks, less fuel.';
+      bar.classList.add('is-unlocked');
+    } else {
+      msg.innerHTML = `<strong>${fmt(remaining)}</strong> away from free shipping.`;
+      bar.classList.remove('is-unlocked');
+    }
+  }
 }
 
 function openCart()  { $('#cartDrawer').classList.add('is-open'); $('#cartScrim').classList.add('is-open'); }
