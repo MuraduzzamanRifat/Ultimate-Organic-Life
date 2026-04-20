@@ -64,59 +64,106 @@ const Wishlist = {
 };
 
 /* ===================== Shell injection ===================== */
+const CAT_ICONS = {
+  health:  '<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 21s-7-4.5-7-10a5 5 0 0 1 9-3 5 5 0 0 1 9 3c0 5.5-7 10-7 10z"/></svg>',
+  beauty:  '<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="12" r="7"/><path d="M12 5v14M5 12h14"/></svg>',
+  hygiene: '<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 3c2 4 4 6 4 9a4 4 0 1 1-8 0c0-3 2-5 4-9z"/></svg>',
+  food:    '<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M17 8C8 10 6 16 4 21l2 1 1-2 1 .3c11 0 14-17 14-17-1 2-8 2-13 3-5 1-7 5-7 7s2 4 2 4C7 8 17 8 17 8z"/></svg>',
+};
+
 const shellHeader = (active = '') => `
-  <div class="strip">
-    <span>Complimentary delivery from $50 · 24 states</span>
-    <span class="strip__sep" aria-hidden="true">—</span>
-    <span>Carbon-neutral courier · Farm-to-door in 48 h</span>
-  </div>
-  <header class="nav" id="nav">
-    <div class="nav__row">
-      <div class="nav__left">
-        <button type="button" class="menu" id="menuBtn" aria-label="Open menu" aria-expanded="false">
-          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3"><line x1="4" y1="8" x2="20" y2="8"/><line x1="4" y1="16" x2="20" y2="16"/></svg>
-        </button>
-        <a href="about.html" class="nav__link nav__link--hide${active==='about'?' is-active':''}">Our story</a>
+  <div class="topbar">
+    <div class="topbar__inner">
+      <div class="topbar__left">
+        <span class="leaf-pip" aria-hidden="true">●</span>
+        Free delivery on orders over $50 · Carbon-neutral courier
       </div>
-      <a href="index.html" class="wordmark" aria-label="GreenKart home">GREENKART</a>
-      <div class="nav__right">
-        <a href="shop.html" class="nav__link nav__link--hide${active==='shop'?' is-active':''}">Shop</a>
-        <a href="journal.html" class="nav__link nav__link--hide${active==='journal'?' is-active':''}">Journal</a>
-        <a href="farms.html" class="nav__link nav__link--hide${active==='farms'?' is-active':''}">Farms</a>
-        <a href="contact.html" class="nav__link" aria-label="Contact">
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3"><path d="M21 11.5a8.4 8.4 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.4 8.4 0 0 1-3.8-.9L3 21l1.9-5.7a8.4 8.4 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.4 8.4 0 0 1 3.8-.9h.5a8.5 8.5 0 0 1 8 8z"/></svg>
+      <div class="topbar__right">
+        <a href="#">Store locator</a>
+        <span class="topbar__sep">·</span>
+        <a href="#">Track order</a>
+        <span class="topbar__sep">·</span>
+        <a href="contact.html">Help</a>
+      </div>
+    </div>
+  </div>
+
+  <header class="site-head">
+    <div class="site-head__inner">
+      <a href="index.html" class="logo" aria-label="GreenKart home">
+        <span class="logo__mark" aria-hidden="true">
+          <svg width="42" height="42" viewBox="0 0 48 48">
+            <circle cx="24" cy="24" r="22" fill="#72b93e"/>
+            <path d="M24 12 C 16 18, 16 30, 24 38 C 32 30, 32 18, 24 12 Z" fill="#ffffff"/>
+            <path d="M24 12 L 24 38" stroke="#72b93e" stroke-width="1.5"/>
+          </svg>
+        </span>
+        <span class="logo__text">
+          <b>Green<strong>Kart</strong></b>
+          <small>created to care</small>
+        </span>
+      </a>
+
+      <div class="site-head__phone">
+        <span class="pmark" aria-hidden="true">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#72b93e" stroke-width="1.8"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3 19.5 19.5 0 0 1-6-6 19.8 19.8 0 0 1-3-8.6A2 2 0 0 1 4 2h3a2 2 0 0 1 2 1.7c.1.9.3 1.8.6 2.6a2 2 0 0 1-.5 2.1L7.9 9.8a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.8.2 1.7.5 2.6.6a2 2 0 0 1 1.7 2z"/></svg>
+        </span>
+        <span>
+          <small>Place a quick order on</small>
+          <b>+1 800 123 4567</b>
+        </span>
+      </div>
+
+      <form class="searchbox" role="search" onsubmit="event.preventDefault()">
+        <input type="search" placeholder="Search among 2,000 products…" aria-label="Search products" />
+        <button type="submit" aria-label="Search">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.35-4.35"/></svg>
+        </button>
+      </form>
+
+      <div class="site-head__util">
+        <button type="button" class="menu util-btn" id="menuBtn" aria-label="Open menu" aria-expanded="false">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><line x1="4" y1="8" x2="20" y2="8"/><line x1="4" y1="16" x2="20" y2="16"/></svg>
+        </button>
+        <a href="account.html" class="util-btn" aria-label="Account">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
         </a>
-        <a href="account.html" class="nav__link" aria-label="Account">
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
-        </a>
-        <button type="button" class="nav__link nav__bag" id="openCart" aria-label="Bag">
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3"><path d="M5 7h15l-1.5 11a2 2 0 0 1-2 1.7H8.5a2 2 0 0 1-2-1.7L5 7z"/><path d="M9 7V5a3 3 0 0 1 6 0v2"/></svg>
+        <button type="button" class="util-btn util-btn--cart" id="openCart" aria-label="Cart">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M5 7h15l-1.5 11a2 2 0 0 1-2 1.7H8.5a2 2 0 0 1-2-1.7L5 7z"/><path d="M9 7V5a3 3 0 0 1 6 0v2"/></svg>
           <em data-cart-count>0</em>
         </button>
       </div>
     </div>
+
+    <nav class="cat-nav" aria-label="Product categories">
+      <div class="cat-nav__inner">
+        <a class="cat-chip${active==='shop'?' is-active':''}" href="shop.html">${CAT_ICONS.health} Everything</a>
+        <a class="cat-chip" href="shop.html?cat=health">${CAT_ICONS.health} Health &amp; Strength</a>
+        <a class="cat-chip" href="shop.html?cat=beauty">${CAT_ICONS.beauty} Beauty &amp; Wellness</a>
+        <a class="cat-chip" href="shop.html?cat=hygiene">${CAT_ICONS.hygiene} Home &amp; Hygiene</a>
+        <a class="cat-chip" href="shop.html?cat=food">${CAT_ICONS.food} Food &amp; Drinks</a>
+        <a class="cat-chip cat-chip--sale" href="shop.html?sale=1">Promotions</a>
+      </div>
+    </nav>
   </header>
 
   <aside class="sidemenu" id="sideMenu" aria-hidden="true">
-    <div class="sidemenu__inner">
-      <button type="button" class="sidemenu__close" aria-label="Close menu" id="menuClose">Close</button>
-      <nav>
-        <a href="index.html">Home</a>
-        <a href="shop.html">Shop all</a>
-        <a href="shop.html?cat=fruits">Fruits</a>
-        <a href="shop.html?cat=vegetables">Vegetables</a>
-        <a href="shop.html?cat=bakery">Bakery</a>
-        <a href="shop.html?cat=dairy">Dairy &amp; Eggs</a>
-        <a href="shop.html?cat=pantry">Pantry</a>
-        <a href="farms.html">Our farms</a>
-        <a href="journal.html">Journal</a>
-        <a href="about.html">Our story</a>
-        <a href="contact.html">Contact</a>
-      </nav>
-      <div class="sidemenu__foot">
-        <small>United States · English · USD</small>
-        <small>hello@greenkart.demo · +1 800 123 4567</small>
-      </div>
+    <button type="button" class="sidemenu__close" aria-label="Close menu" id="menuClose">Close</button>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="shop.html">Shop all</a>
+      <a href="shop.html?cat=health">Health &amp; Strength</a>
+      <a href="shop.html?cat=beauty">Beauty &amp; Wellness</a>
+      <a href="shop.html?cat=hygiene">Home &amp; Hygiene</a>
+      <a href="shop.html?cat=food">Food &amp; Drinks</a>
+      <a href="farms.html">Our producers</a>
+      <a href="journal.html">Journal</a>
+      <a href="about.html">Our story</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+    <div class="sidemenu__foot">
+      <small>United States · English · USD</small>
+      <small>hello@greenkart.demo · +1 800 123 4567</small>
     </div>
   </aside>
   <div class="scrim" id="menuScrim"></div>
@@ -148,29 +195,29 @@ const shellFooter = () => `
     <div class="foot__grid">
       <div class="foot__brand">
         <span class="foot__mark">GreenKart</span>
-        <p>A curated boutique of organic produce, pantry, and home goods from small cooperative farms. Delivered to 24 states.</p>
+        <p>One-stop organic shop: certified food, wellness, and natural care from trusted producers. Serving 24 states since 2023.</p>
         <div class="foot__certs">
           <span>USDA Organic</span><span>Non-GMO</span><span>B-Corp</span><span>Climate Neutral</span>
         </div>
       </div>
       <div class="foot__col">
         <h6>Shop</h6>
-        <a href="shop.html?cat=fruits">Fruits</a>
-        <a href="shop.html?cat=vegetables">Vegetables</a>
-        <a href="shop.html?cat=bakery">Bakery</a>
-        <a href="shop.html?cat=dairy">Dairy &amp; Eggs</a>
-        <a href="shop.html?cat=pantry">Pantry</a>
+        <a href="shop.html?cat=health">Health &amp; Strength</a>
+        <a href="shop.html?cat=beauty">Beauty &amp; Wellness</a>
+        <a href="shop.html?cat=hygiene">Home &amp; Hygiene</a>
+        <a href="shop.html?cat=food">Food &amp; Drinks</a>
+        <a href="shop.html?sale=1">Promotions</a>
       </div>
       <div class="foot__col">
-        <h6>The house</h6>
+        <h6>Company</h6>
         <a href="about.html">About</a>
-        <a href="farms.html">Our farms</a>
+        <a href="farms.html">Our producers</a>
         <a href="journal.html">Journal</a>
         <a href="#">Sustainability</a>
         <a href="#">Careers</a>
       </div>
       <div class="foot__col">
-        <h6>Client care</h6>
+        <h6>Customer care</h6>
         <a href="#">Shipping</a>
         <a href="#">Returns</a>
         <a href="contact.html">Contact</a>
@@ -356,14 +403,16 @@ function initNavScroll() {
 /* ===================== Page templates ===================== */
 function productCardTpl(p) {
   const price = p.old ? `${fmt(p.price)}<s>${fmt(p.old)}</s>` : fmt(p.price);
-  const tag = p.old ? '<span class="prod__tag">Sale</span>' : (p.featured ? '<span class="prod__tag">Featured</span>' : '');
+  const tag = p.old
+    ? '<span class="prod__tag prod__tag--sale">Sale</span>'
+    : (p.featured ? '<span class="prod__tag">New</span>' : '');
   const wish = Wishlist.has(p.id) ? ' is-on' : '';
   return `
     <article class="prod" data-id="${p.id}" data-cat="${p.cat}">
       <a href="product.html?id=${p.id}" class="prod__img">
         ${tag}
         <button type="button" class="prod__fav${wish}" data-wish="${p.id}" aria-label="Save to wishlist">
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.7l-1-1.1a5.5 5.5 0 1 0-7.8 7.8l1.1 1L12 21l7.7-7.6 1.1-1a5.5 5.5 0 0 0 0-7.8z"/></svg>
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.7l-1-1.1a5.5 5.5 0 1 0-7.8 7.8l1.1 1L12 21l7.7-7.6 1.1-1a5.5 5.5 0 0 0 0-7.8z"/></svg>
         </button>
         <img src="${p.img}" alt="${p.title}" loading="lazy"/>
       </a>
@@ -372,7 +421,7 @@ function productCardTpl(p) {
         <h3 class="prod__title"><a href="product.html?id=${p.id}">${p.title}</a></h3>
         <div class="prod__foot">
           <span class="prod__price">${price}</span>
-          <button type="button" class="prod__add" data-add="${p.id}">Add to bag</button>
+          <button type="button" class="prod__add" data-add="${p.id}">Add</button>
         </div>
       </div>
     </article>`;
@@ -380,23 +429,42 @@ function productCardTpl(p) {
 
 /* ===================== Page bootstraps ===================== */
 function bootHome() {
-  // Hero crossfade
-  const slides = $$('.hero__slide'), ticks = $$('.hero__ticker span');
-  if (slides.length > 1 && !matchMedia('(prefers-reduced-motion: reduce)').matches) {
-    let i = 0;
-    setInterval(() => {
-      slides[i].classList.remove('is-in'); ticks[i]?.classList.remove('is-in');
-      i = (i + 1) % slides.length;
-      slides[i].classList.add('is-in');  ticks[i]?.classList.add('is-in');
-    }, 6000);
-  }
-  // Featured products
+  // Featured products grid
   const feat = $('#featuredGrid');
-  if (feat) feat.innerHTML = PRODUCTS.filter(p => p.featured).slice(0, 6).map(productCardTpl).join('');
-  // Sale products in showcase
+  if (feat) feat.innerHTML = PRODUCTS.filter(p => p.featured).slice(0, 8).map(productCardTpl).join('');
+  // Sale rail
   const sale = $('#saleRail');
   if (sale) sale.innerHTML = PRODUCTS.filter(p => p.old).map(productCardTpl).join('');
-  initNavScroll();
+  // Mega block mini products
+  $$('[data-cat-grid]').forEach(wrap => {
+    const cat = wrap.dataset.catGrid;
+    const list = PRODUCTS.filter(p => p.cat === cat).slice(0, 6);
+    wrap.innerHTML = list.map(miniTpl).join('');
+  });
+  // Journal preview (first 3)
+  const jp = $('#journalPreview');
+  if (jp && window.JOURNAL) jp.innerHTML = window.JOURNAL.slice(0, 3).map(a => `
+    <article class="post">
+      <a href="journal-post.html?slug=${a.slug}" class="post__img" aria-label="${a.title}"><img src="${a.img}" alt="" loading="lazy"/></a>
+      <div class="post__body">
+        <span class="post__tag">${a.category}</span>
+        <h3><a href="journal-post.html?slug=${a.slug}">${a.title}</a></h3>
+        <p>${a.excerpt}</p>
+      </div>
+    </article>`).join('');
+}
+
+/* Mini product tile for the home mega blocks */
+function miniTpl(p) {
+  const priceHtml = p.old ? `${fmt(p.price)}<s>${fmt(p.old)}</s>` : fmt(p.price);
+  return `
+    <a href="product.html?id=${p.id}" class="mini" data-id="${p.id}">
+      <span class="mini__img"><img src="${p.img}" alt="${p.title}" loading="lazy"/></span>
+      <span class="mini__body">
+        <span class="mini__title">${p.title}</span>
+        <span class="mini__price">${priceHtml}</span>
+      </span>
+    </a>`;
 }
 
 function bootShop() {
@@ -404,11 +472,13 @@ function bootShop() {
   const sortSel = $('#sortBy'), searchIn = $('#searchIn');
   const params = new URLSearchParams(location.search);
   let activeCat = params.get('cat') || 'all';
+  const saleOnly = params.get('sale') === '1';
   let query = '';
   let sort = 'featured';
 
   function matches(p) {
     if (activeCat !== 'all' && p.cat !== activeCat) return false;
+    if (saleOnly && !p.old) return false;
     if (query) {
       const q = query.toLowerCase();
       if (!(p.title + ' ' + p.subtitle + ' ' + p.cat + ' ' + p.origin).toLowerCase().includes(q)) return false;
