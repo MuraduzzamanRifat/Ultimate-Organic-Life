@@ -3,109 +3,229 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>GreenKart Organics</title>
-<meta name="description" content="Organic groceries from small farms. Harvested weekly, delivered to your door." />
+<title>GreenKart Organics — Farm-to-Table Groceries, Delivered</title>
+<meta name="description" content="Small-farm organic groceries, delivered to your door across 24 states. Certified, traceable, same-week harvest." />
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght,SOFT@9..144,300;9..144,400;9..144,500&family=Inter:wght@300;400;500&display=swap" rel="stylesheet" />
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght,SOFT@9..144,300;9..144,400;9..144,500;9..144,600&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
 <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
 
 <a class="skip" href="#main">Skip to content</a>
 
+<!-- ============== Announcement top bar ============== -->
+<div class="topbar" aria-label="Store announcements">
+  <div class="topbar__inner">
+    <span>Free delivery on orders over $50</span>
+    <span class="topbar__sep" aria-hidden="true">·</span>
+    <span>Carbon-neutral shipping, 48 h farm-to-door</span>
+    <span class="topbar__sep" aria-hidden="true">·</span>
+    <span>Now serving 24 states</span>
+  </div>
+</div>
+
+<!-- ============== Header ============== -->
 <header class="nav">
-  <a href="#" class="brand" aria-label="GreenKart Organics — home">
-    <svg viewBox="0 0 40 40" width="26" height="26" aria-hidden="true">
-      <path d="M20 7 C 13 13, 13 25, 20 33 C 27 25, 27 13, 20 7 Z" fill="none" stroke="currentColor" stroke-width="1.1"/>
-      <path d="M20 7 L 20 33" stroke="currentColor" stroke-width="1.1"/>
-    </svg>
-    <span>GreenKart</span>
-  </a>
-  <nav aria-label="Primary">
-    <a href="#shop">Shop</a>
-    <a href="#featured">Featured</a>
-    <a href="#story">Our story</a>
-    <a href="#contact">Contact</a>
-  </nav>
-  <div class="nav__actions">
-    <button type="button" class="nav__search" aria-label="Search">
-      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.35-4.35"/></svg>
-    </button>
-    <button type="button" class="nav__cart" id="openCart" aria-label="Cart">
-      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M5 7h15l-1.5 11a2 2 0 0 1-2 1.7H8.5a2 2 0 0 1-2-1.7L5 7z"/><path d="M9 7V5a3 3 0 0 1 6 0v2"/></svg>
-      <span>Bag<em data-cart-count>0</em></span>
-    </button>
+  <div class="nav__inner">
+    <a href="#" class="brand" aria-label="GreenKart Organics, home">
+      <svg viewBox="0 0 40 40" width="24" height="24" aria-hidden="true">
+        <path d="M20 7 C 13 13, 13 25, 20 33 C 27 25, 27 13, 20 7 Z" fill="none" stroke="currentColor" stroke-width="1.1"/>
+        <path d="M20 7 L 20 33" stroke="currentColor" stroke-width="1.1"/>
+      </svg>
+      <span>GreenKart</span>
+    </a>
+
+    <nav class="nav__menu" aria-label="Primary">
+      <a href="#shop">Shop</a>
+      <a href="#categories">Categories</a>
+      <a href="#journal">Journal</a>
+      <a href="#farms">Our farms</a>
+      <a href="#story">About</a>
+    </nav>
+
+    <div class="nav__util">
+      <select class="nav__locale" aria-label="Region and currency">
+        <option>United States · USD</option>
+        <option>Canada · CAD</option>
+        <option>United Kingdom · GBP</option>
+        <option>Europe · EUR</option>
+        <option>Japan · JPY</option>
+      </select>
+      <button type="button" class="nav__icon" aria-label="Search">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.35-4.35"/></svg>
+      </button>
+      <button type="button" class="nav__icon" aria-label="Account">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+      </button>
+      <button type="button" class="nav__bag" id="openCart" aria-label="Bag">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M5 7h15l-1.5 11a2 2 0 0 1-2 1.7H8.5a2 2 0 0 1-2-1.7L5 7z"/><path d="M9 7V5a3 3 0 0 1 6 0v2"/></svg>
+        <span>Bag<em data-cart-count>0</em></span>
+      </button>
+    </div>
   </div>
 </header>
 
 <main id="main">
 
-<!-- =========== Hero =========== -->
+<!-- ============== Hero · split composition ============== -->
 <section class="hero" aria-label="Featured">
-  <img class="hero__img"
-       src="https://images.unsplash.com/photo-1542838132-92c53300491e?w=2000&q=85&auto=format&fit=crop"
-       alt="Freshly harvested vegetables in a wooden crate."
-       fetchpriority="high" />
-  <div class="hero__overlay"></div>
-  <div class="hero__content">
-    <p class="eyebrow reveal">Spring harvest · 2026</p>
-    <h1 class="reveal reveal--delay">Small farms.<br/>Honest food.</h1>
-    <p class="hero__lede reveal reveal--delay-2">Groceries grown within a day's drive of your table.</p>
-    <a class="btn btn--ghost reveal reveal--delay-3" href="#shop">Shop the harvest</a>
+  <div class="hero__grid">
+    <div class="hero__copy">
+      <p class="eyebrow reveal">Spring collection · No. 12</p>
+      <h1 class="reveal reveal--delay">
+        A quieter<br/>way to eat.<span class="serif-alt">*</span>
+      </h1>
+      <p class="hero__lede reveal reveal--delay-2">
+        One hundred and twenty small farms. Harvested to order. Delivered within forty-eight hours.
+      </p>
+      <div class="hero__cta reveal reveal--delay-3">
+        <a href="#shop" class="btn btn--ink">Shop the season</a>
+        <a href="#story" class="link-arrow">How it works <span aria-hidden="true">→</span></a>
+      </div>
+      <dl class="hero__stats reveal reveal--delay-3">
+        <div><dt>Farms</dt><dd>120</dd></div>
+        <div><dt>Delivered to</dt><dd>24 states</dd></div>
+        <div><dt>Avg. miles</dt><dd>140</dd></div>
+        <div><dt>Cold storage</dt><dd>0</dd></div>
+      </dl>
+    </div>
+
+    <figure class="hero__figure reveal reveal--delay">
+      <img src="https://images.unsplash.com/photo-1506617420156-8e4536971650?w=1400&q=85&auto=format&fit=crop"
+           alt="An overhead view of a wooden market basket filled with seasonal organic produce on a linen cloth."
+           fetchpriority="high" />
+      <figcaption>
+        <div class="hero__tag">
+          <span class="hero__tag-num">n°12</span>
+          <span class="hero__tag-line">Spring harvest box · <time datetime="2026-04">April 2026</time></span>
+        </div>
+        <div class="hero__floater">
+          <span class="eyebrow">Starting from</span>
+          <b>$48<span>/box</span></b>
+          <small>weekly · pause anytime</small>
+        </div>
+      </figcaption>
+    </figure>
   </div>
-  <a href="#intro" class="hero__scroll" aria-label="Scroll down">
-    <svg width="14" height="24" viewBox="0 0 14 24" fill="none" stroke="currentColor" stroke-width="1"><rect x="0.5" y="0.5" width="13" height="23" rx="6.5"/><line x1="7" y1="5" x2="7" y2="10"/></svg>
-  </a>
 </section>
 
-<!-- =========== Intro =========== -->
-<section class="intro reveal" id="intro">
-  <p class="intro__tag">Est. 2023 · Burlington, Vermont</p>
-  <p class="intro__body">
-    We work with a hundred and twenty small farms across the Northeast. Nothing travels further than it has to.
-    Nothing is stored longer than it wants to be. What arrives at your door is what we'd bring home to ours.
-  </p>
+<!-- ============== Marquee ticker ============== -->
+<div class="marquee" aria-hidden="true">
+  <div class="marquee__track">
+    <span>Certified organic</span><span aria-hidden="true" class="marquee__dot">✦</span>
+    <span>Same-week harvest</span><span aria-hidden="true" class="marquee__dot">✦</span>
+    <span>Carbon-neutral delivery</span><span aria-hidden="true" class="marquee__dot">✦</span>
+    <span>Zero cold-storage</span><span aria-hidden="true" class="marquee__dot">✦</span>
+    <span>Compostable packaging</span><span aria-hidden="true" class="marquee__dot">✦</span>
+    <span>Paid at fair-farm rates</span><span aria-hidden="true" class="marquee__dot">✦</span>
+    <!-- duplicated for seamless loop -->
+    <span>Certified organic</span><span aria-hidden="true" class="marquee__dot">✦</span>
+    <span>Same-week harvest</span><span aria-hidden="true" class="marquee__dot">✦</span>
+    <span>Carbon-neutral delivery</span><span aria-hidden="true" class="marquee__dot">✦</span>
+    <span>Zero cold-storage</span><span aria-hidden="true" class="marquee__dot">✦</span>
+    <span>Compostable packaging</span><span aria-hidden="true" class="marquee__dot">✦</span>
+    <span>Paid at fair-farm rates</span><span aria-hidden="true" class="marquee__dot">✦</span>
+  </div>
+</div>
+
+<!-- ============== Category explorer ============== -->
+<section class="categories" id="categories">
+  <header class="sec-head reveal">
+    <span class="sec-kicker">01 · The aisles</span>
+    <h2>Shop by what's in season.</h2>
+  </header>
+  <div class="cat-grid">
+    <a href="#shop" class="cat reveal">
+      <span class="cat__num">01</span>
+      <span class="cat__img"><img src="https://images.unsplash.com/photo-1518977676601-b53f82aba655?w=600&q=85&auto=format&fit=crop" alt="" loading="lazy"/></span>
+      <h3>Vegetables &amp; Greens</h3>
+      <span class="cat__count">48 items</span>
+    </a>
+    <a href="#shop" class="cat reveal reveal--delay">
+      <span class="cat__num">02</span>
+      <span class="cat__img"><img src="https://images.unsplash.com/photo-1610832958506-aa56368176cf?w=600&q=85&auto=format&fit=crop" alt="" loading="lazy"/></span>
+      <h3>Stone &amp; Pome Fruit</h3>
+      <span class="cat__count">52 items</span>
+    </a>
+    <a href="#shop" class="cat reveal reveal--delay-2">
+      <span class="cat__num">03</span>
+      <span class="cat__img"><img src="https://images.unsplash.com/photo-1619566636858-adf3ef46400b?w=600&q=85&auto=format&fit=crop" alt="" loading="lazy"/></span>
+      <h3>Dairy &amp; the Henhouse</h3>
+      <span class="cat__count">26 items</span>
+    </a>
+    <a href="#shop" class="cat reveal reveal--delay-3">
+      <span class="cat__num">04</span>
+      <span class="cat__img"><img src="https://images.unsplash.com/photo-1447175008436-054170c2e979?w=600&q=85&auto=format&fit=crop" alt="" loading="lazy"/></span>
+      <h3>Bakery &amp; Grains</h3>
+      <span class="cat__count">19 items</span>
+    </a>
+  </div>
 </section>
 
-<!-- =========== Three columns (values) =========== -->
+<!-- ============== This week · horizontal showcase ============== -->
+<section class="showcase" id="featured">
+  <header class="sec-head">
+    <span class="sec-kicker reveal">02 · This week</span>
+    <div class="showcase__head reveal">
+      <h2>Picked on Monday.<br/>At your door Wednesday.</h2>
+      <div class="showcase__controls">
+        <button type="button" class="scroll-btn" data-dir="-1" aria-label="Previous">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M15 18l-6-6 6-6"/></svg>
+        </button>
+        <button type="button" class="scroll-btn" data-dir="1" aria-label="Next">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M9 18l6-6-6-6"/></svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <div class="showcase__rail" id="showcaseRail"></div>
+</section>
+
+<!-- ============== Editorial banner ============== -->
+<section class="banner reveal" aria-label="Our promise">
+  <img src="https://images.unsplash.com/photo-1464226184884-fa280b87c399?w=2000&q=85&auto=format&fit=crop"
+       alt="A rolling landscape of cultivated fields at golden hour." loading="lazy" />
+  <div class="banner__overlay"></div>
+  <div class="banner__content">
+    <p class="eyebrow eyebrow--on-dark">A commitment in six words</p>
+    <h2>Real food.<br/>Fairly paid.<br/>Honestly priced.</h2>
+    <a href="#story" class="btn btn--ghost">Read our standards</a>
+  </div>
+</section>
+
+<!-- ============== Values · 3 columns ============== -->
 <section class="values">
   <div class="values__col reveal">
-    <span class="values__num">01</span>
+    <span class="values__num">03</span>
     <h3>Harvested, not warehoused.</h3>
-    <p>Produce is picked to order each week. We don't hold it in a freezer waiting for your click.</p>
+    <p>Produce is picked to order each week. Nothing sits in a freezer waiting for your click.</p>
   </div>
   <div class="values__col reveal reveal--delay">
-    <span class="values__num">02</span>
+    <span class="values__num">04</span>
     <h3>Certified, not suggested.</h3>
-    <p>Every grower in our network holds an independent organic certification. Ask, and we'll send the paperwork.</p>
+    <p>Every grower in our network holds independent organic certification. Ask — we'll send the paperwork.</p>
   </div>
   <div class="values__col reveal reveal--delay-2">
-    <span class="values__num">03</span>
+    <span class="values__num">05</span>
     <h3>Priced, not marked up.</h3>
-    <p>We take ten percent. Farmers take the rest. You pay what the food is worth — not what a chain can squeeze.</p>
+    <p>We take ten percent. Farmers take the rest. You pay what the food is worth, not what a chain can charge.</p>
   </div>
 </section>
 
-<!-- =========== Featured specimen (quiet) =========== -->
-<section class="featured reveal" id="featured">
+<!-- ============== Featured product (no 3D) ============== -->
+<section class="featured reveal" id="specimen">
   <div class="featured__image">
-    <div class="specimen3d" data-specimen-3d>
-      <img class="specimen3d__fallback"
-           src="https://images.unsplash.com/photo-1498557850523-fd3d118b962e?w=1600&q=85&auto=format&fit=crop"
-           alt="Wild blueberries in a shallow dish, photographed in soft daylight." />
-      <canvas class="specimen3d__canvas" aria-label="Three-dimensional study — drag to rotate."></canvas>
-      <button type="button" class="specimen3d__toggle" data-3d-toggle aria-pressed="false">
-        <span class="specimen3d__toggle-txt">View in 3D</span>
-      </button>
-    </div>
+    <img src="https://images.unsplash.com/photo-1498557850523-fd3d118b962e?w=1600&q=85&auto=format&fit=crop"
+         alt="Wild blueberries in a linen-lined bowl, shot in soft morning light." loading="lazy" />
   </div>
   <div class="featured__text">
-    <p class="eyebrow">This week</p>
+    <p class="eyebrow">Featured this week</p>
     <h2>Wild hillside<br/>blueberries.</h2>
     <p>
-      Picked before the birds find them, small, dark and acid — the way a berry is supposed
-      to taste before breeding made them sweet. In punnets of a hundred and twenty-five grams.
+      Picked before the birds find them — small, dark and acid — the way a berry is supposed
+      to taste before breeding made them sweet. In punnets of one hundred and twenty-five grams.
     </p>
     <div class="featured__price">
       <span><b>$6.25</b><s>$8.00</s></span>
@@ -114,7 +234,7 @@
 
     <figure class="grower">
       <img class="grower__avatar"
-           src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=160&h=160&q=80&auto=format&fit=crop"
+           src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=160&h=160&q=85&auto=format&fit=crop"
            alt="Portrait of a farmer in soft daylight." loading="lazy" />
       <figcaption>
         <span class="grower__name">Grown by the <strong>Abernathy Family</strong></span>
@@ -127,87 +247,133 @@
   </div>
 </section>
 
-<!-- =========== Shop grid =========== -->
+<!-- ============== Shop grid ============== -->
 <section class="shop" id="shop">
-  <header class="shop__head">
-    <h2>The harvest</h2>
-    <div class="shop__filter">
-      <button class="f is-active" data-filter="all">All</button>
-      <button class="f" data-filter="vegetables">Vegetables</button>
-      <button class="f" data-filter="fruits">Fruits</button>
-      <button class="f" data-filter="dairy">Dairy</button>
-      <button class="f" data-filter="bakery">Bakery</button>
+  <header class="sec-head">
+    <span class="sec-kicker">06 · The harvest</span>
+    <div class="shop__head reveal">
+      <h2>Everything, this week.</h2>
+      <div class="shop__filter">
+        <button type="button" class="f is-active" data-filter="all">All</button>
+        <button type="button" class="f" data-filter="vegetables">Vegetables</button>
+        <button type="button" class="f" data-filter="fruits">Fruits</button>
+        <button type="button" class="f" data-filter="dairy">Dairy</button>
+        <button type="button" class="f" data-filter="bakery">Bakery</button>
+      </div>
     </div>
   </header>
-
   <div class="shop__grid" id="shopGrid"></div>
 </section>
 
-<!-- =========== Quote =========== -->
+<!-- ============== Press / As featured in ============== -->
+<section class="press reveal">
+  <span class="press__label">As featured in</span>
+  <ul class="press__list">
+    <li><span>The Slow Larder</span></li>
+    <li><span>Harvest Weekly</span></li>
+    <li><span>Edible Northeast</span></li>
+    <li><span>Field &amp; Fork Magazine</span></li>
+    <li><span>The Kitchen Table</span></li>
+  </ul>
+</section>
+
+<!-- ============== Testimonial ============== -->
 <section class="quote reveal">
   <figure>
     <blockquote>
-      "It tastes like food used to taste. That's the only review I have."
+      It tastes like food used to taste.<br/><span>That's the only review I have.</span>
     </blockquote>
-    <figcaption>— Anya L., subscriber since January</figcaption>
+    <figcaption>— Anya L. · subscriber since January</figcaption>
   </figure>
 </section>
 
-<!-- =========== Story =========== -->
-<section class="story" id="story">
-  <div class="story__img">
-    <img src="https://images.unsplash.com/photo-1615485290398-15efa7a7a4ad?w=1400&q=85&auto=format&fit=crop"
-         alt="A farmer inspecting a tray of young plants in a glasshouse." loading="lazy" />
-  </div>
-  <div class="story__text reveal">
-    <p class="eyebrow">Our story</p>
-    <h2>A short one.</h2>
-    <p>
-      We began with a station wagon and six regular customers. Two years on there are fourteen thousand of you,
-      a hundred and twenty farms, and the station wagon is retired.
-    </p>
-    <p>
-      What hasn't changed: we answer the phone ourselves, the food is picked the same week it lands on your table,
-      and our farmers know your order matters to their month.
-    </p>
-    <a class="link" href="#">Read the long version →</a>
+<!-- ============== Journal preview ============== -->
+<section class="journal" id="journal">
+  <header class="sec-head">
+    <span class="sec-kicker">07 · From the journal</span>
+    <div class="journal__head reveal">
+      <h2>Notes, recipes,<br/>field reports.</h2>
+      <a href="#" class="link-arrow">All stories <span aria-hidden="true">→</span></a>
+    </div>
+  </header>
+  <div class="journal__grid">
+    <article class="post reveal">
+      <a href="#" class="post__img" aria-label="Read: Why spring asparagus tastes sweeter than summer's"><img src="https://images.unsplash.com/photo-1464226184884-fa280b87c399?w=1000&q=85&auto=format&fit=crop" alt="" loading="lazy"/></a>
+      <div class="post__body">
+        <span class="post__tag">Seasonal · 6 min</span>
+        <h3><a href="#">Why spring asparagus tastes sweeter than summer's.</a></h3>
+        <p>The field physics of sugar accumulation in the first warm week of April.</p>
+      </div>
+    </article>
+    <article class="post reveal reveal--delay">
+      <a href="#" class="post__img" aria-label="Read: Four generations in one valley, the Ortega family farm"><img src="https://images.unsplash.com/photo-1615485290398-15efa7a7a4ad?w=1000&q=85&auto=format&fit=crop" alt="" loading="lazy"/></a>
+      <div class="post__body">
+        <span class="post__tag">Farm life · 9 min</span>
+        <h3><a href="#">Four generations in one valley: the Ortega family farm.</a></h3>
+        <p>How seventy years of soil amendment make a courgette that hums when tapped.</p>
+      </div>
+    </article>
+    <article class="post reveal reveal--delay-2">
+      <a href="#" class="post__img" aria-label="Read: Five weeknight dinners from the spring box"><img src="https://images.unsplash.com/photo-1490645935967-10de6ba17061?w=1000&q=85&auto=format&fit=crop" alt="" loading="lazy"/></a>
+      <div class="post__body">
+        <span class="post__tag">Recipes · 4 min</span>
+        <h3><a href="#">Five weeknight dinners from the spring box.</a></h3>
+        <p>Ways to turn Wednesday's delivery into Sunday's regret at having eaten it all.</p>
+      </div>
+    </article>
   </div>
 </section>
 
-<!-- =========== Newsletter =========== -->
+<!-- ============== Newsletter ============== -->
 <section class="newsletter" id="contact">
-  <h2>A quiet letter,<br/>four times a year.</h2>
-  <p>Seasonal arrivals, the occasional recipe, nothing else.</p>
-  <form onsubmit="event.preventDefault();this.querySelector('button').textContent='Thank you.';this.querySelector('input').value='';">
-    <input type="email" required placeholder="Email address" aria-label="Email address" />
-    <button class="btn btn--ink" type="submit">Subscribe</button>
-  </form>
+  <div class="newsletter__inner">
+    <p class="eyebrow">A quiet letter</p>
+    <h2>Four issues a year.<br/>Zero newsletters.</h2>
+    <p class="newsletter__lede">
+      Seasonal arrivals, the occasional recipe, a field note worth your Sunday morning. No discount codes.
+    </p>
+    <form onsubmit="event.preventDefault(); this.querySelector('button').textContent='Thank you.'; this.querySelector('input').value='';">
+      <input type="email" required placeholder="your@address.com" aria-label="Email address" />
+      <button class="btn btn--ink" type="submit">Subscribe</button>
+    </form>
+    <small class="newsletter__fine">We publish on the first Saturday of each season · unsubscribe at will.</small>
+  </div>
 </section>
 
 </main>
 
-<!-- =========== Footer =========== -->
-<footer class="foot">
+<!-- ============== Footer ============== -->
+<footer class="foot" id="story">
   <div class="foot__top">
-    <a href="#" class="brand brand--foot">
-      <svg viewBox="0 0 40 40" width="22" height="22" aria-hidden="true">
-        <path d="M20 7 C 13 13, 13 25, 20 33 C 27 25, 27 13, 20 7 Z" fill="none" stroke="currentColor" stroke-width="1.1"/>
-        <path d="M20 7 L 20 33" stroke="currentColor" stroke-width="1.1"/>
-      </svg>
-      <span>GreenKart</span>
-    </a>
+    <div class="foot__brand">
+      <a href="#" class="brand brand--foot">
+        <svg viewBox="0 0 40 40" width="24" height="24" aria-hidden="true">
+          <path d="M20 7 C 13 13, 13 25, 20 33 C 27 25, 27 13, 20 7 Z" fill="none" stroke="currentColor" stroke-width="1.1"/>
+          <path d="M20 7 L 20 33" stroke="currentColor" stroke-width="1.1"/>
+        </svg>
+        <span>GreenKart</span>
+      </a>
+      <p>Small-farm organic groceries, delivered to your door across 24 states and four countries.</p>
+      <div class="foot__certs" aria-label="Certifications">
+        <span class="cert">USDA Organic</span>
+        <span class="cert">Non-GMO</span>
+        <span class="cert">B-Corp</span>
+        <span class="cert">Climate Neutral</span>
+      </div>
+    </div>
+
     <div class="foot__cols">
       <div>
         <h6>Shop</h6>
-        <a href="#">Vegetables</a><a href="#">Fruits</a><a href="#">Dairy</a><a href="#">Bakery</a>
+        <a href="#">Vegetables</a><a href="#">Fruits</a><a href="#">Dairy &amp; Eggs</a><a href="#">Bakery</a><a href="#">Pantry</a><a href="#">Weekly box</a>
       </div>
       <div>
         <h6>Company</h6>
-        <a href="#">Our farms</a><a href="#">Sustainability</a><a href="#">Press</a><a href="#">Careers</a>
+        <a href="#">Our farms</a><a href="#">Sustainability</a><a href="#">Press</a><a href="#">Careers</a><a href="#">Journal</a>
       </div>
       <div>
         <h6>Help</h6>
-        <a href="#">Shipping</a><a href="#">Returns</a><a href="#">Contact</a><a href="#">Account</a>
+        <a href="#">Shipping</a><a href="#">Returns</a><a href="#">Contact</a><a href="#">Account</a><a href="#">FAQ</a>
       </div>
       <div>
         <h6>Contact</h6>
@@ -217,9 +383,31 @@
       </div>
     </div>
   </div>
+
+  <div class="foot__mid">
+    <div class="foot__locale">
+      <label for="foot-region" class="eyebrow">Ship to</label>
+      <select id="foot-region" aria-label="Shipping region">
+        <option>United States · USD</option>
+        <option>Canada · CAD</option>
+        <option>United Kingdom · GBP</option>
+        <option>Europe · EUR</option>
+        <option>Japan · JPY</option>
+      </select>
+    </div>
+    <div class="foot__pay" aria-label="Accepted payment methods">
+      <span>Visa</span><span>MC</span><span>Amex</span><span>Apple Pay</span><span>Google Pay</span><span>Klarna</span>
+    </div>
+    <div class="foot__social">
+      <a href="#" aria-label="Instagram">Instagram</a>
+      <a href="#" aria-label="Pinterest">Pinterest</a>
+      <a href="#" aria-label="Substack">Substack</a>
+    </div>
+  </div>
+
   <div class="foot__bot">
     <small>© 2026 GreenKart Organics · A design demo, not a live retailer.</small>
-    <small>Hand-coded · Burlington, VT</small>
+    <small><a href="#">Privacy</a> · <a href="#">Terms</a> · <a href="#">Cookies</a> · <a href="#">Accessibility</a></small>
   </div>
 </footer>
 
@@ -237,6 +425,10 @@
     </div>
     <div class="drawer__total"><span>Subtotal</span><b data-cart-total-drawer>$0.00</b></div>
     <a href="#" class="btn btn--ink btn--block">Checkout</a>
+    <p class="drawer__trust">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" aria-hidden="true"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+      Secure checkout · 128-bit encryption
+    </p>
   </footer>
 </aside>
 <div class="scrim" id="cartScrim"></div>
