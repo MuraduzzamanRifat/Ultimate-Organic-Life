@@ -3,384 +3,247 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>GreenKart — Organic Food, Wellness &amp; Natural Care</title>
-<meta name="description" content="A one-stop online shop for certified organic food, natural beauty care, herbal supplements, and household essentials. Free delivery over $50." />
+<title>GreenKart — Rare Produce, Cultivated with Care</title>
+<meta name="description" content="A curated boutique of organic produce, pantry, and home goods from small cooperative farms. Delivered to 24 states." />
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght,SOFT@9..144,200;9..144,300;9..144,400;9..144,500&family=Inter:wght@300;400;500&display=swap" rel="stylesheet" />
 <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
 
 <a class="skip" href="#main">Skip to content</a>
 
-<!-- ========== Top announcement bar ========== -->
-<div class="topbar">
-  <div class="topbar__inner">
-    <div class="topbar__left">
-      <span class="leaf-pip" aria-hidden="true">●</span>
-      Free delivery on orders over $50 · Carbon-neutral shipping
-    </div>
-    <div class="topbar__right">
-      <a href="#">Store locator</a>
-      <span class="topbar__sep">·</span>
-      <a href="#">Track order</a>
-      <span class="topbar__sep">·</span>
-      <a href="#">Help</a>
-    </div>
-  </div>
+<!-- ========== Thin top strip ========== -->
+<div class="strip">
+  <span>Complimentary delivery from $50 · 24 states</span>
+  <span class="strip__sep" aria-hidden="true">—</span>
+  <span>Carbon-neutral courier</span>
 </div>
 
-<!-- ========== Header ========== -->
-<header class="site-head">
-  <div class="site-head__inner">
-    <a href="#" class="logo" aria-label="GreenKart home">
-      <span class="logo__mark" aria-hidden="true">
-        <svg width="44" height="44" viewBox="0 0 48 48">
-          <circle cx="24" cy="24" r="22" fill="#72b93e"/>
-          <path d="M24 12 C 16 18, 16 30, 24 38 C 32 30, 32 18, 24 12 Z" fill="#ffffff"/>
-          <path d="M24 12 L 24 38" stroke="#72b93e" stroke-width="1.5"/>
-        </svg>
-      </span>
-      <span class="logo__text">
-        <b>Green<strong>Kart</strong></b>
-        <small>created to care</small>
-      </span>
-    </a>
-
-    <div class="site-head__phone">
-      <span class="pmark" aria-hidden="true">
-        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#72b93e" stroke-width="1.8"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3 19.5 19.5 0 0 1-6-6 19.8 19.8 0 0 1-3-8.6A2 2 0 0 1 4 2h3a2 2 0 0 1 2 1.7c.1.9.3 1.8.6 2.6a2 2 0 0 1-.5 2.1L7.9 9.8a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.8.2 1.7.5 2.6.6a2 2 0 0 1 1.7 2z"/></svg>
-      </span>
-      <span>
-        <small>Place a quick order on</small>
-        <b>+1 800 123 4567</b>
-      </span>
+<!-- ========== Nav: minimal chrome ========== -->
+<header class="nav" id="nav">
+  <div class="nav__row">
+    <div class="nav__left">
+      <button type="button" class="menu" id="menuBtn" aria-label="Open menu" aria-expanded="false">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3"><line x1="4" y1="8" x2="20" y2="8"/><line x1="4" y1="16" x2="20" y2="16"/></svg>
+      </button>
+      <a href="#" class="nav__link nav__link--hide">Private client</a>
     </div>
 
-    <form class="searchbox" role="search" onsubmit="event.preventDefault()">
-      <input type="search" placeholder="Search among 2,000 products…" aria-label="Search products" />
-      <button type="submit" aria-label="Search">
-        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.35-4.35"/></svg>
-      </button>
-      <p class="searchbox__pop">
-        <span>Popular:</span> <a href="#">collagen</a>, <a href="#">matcha powder</a>, <a href="#">omega-3</a>
-      </p>
-    </form>
+    <a href="#" class="wordmark" aria-label="GreenKart home">GREENKART</a>
 
-    <div class="site-head__util">
-      <button type="button" class="util-btn" aria-label="Favourites">
-        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.7l-1-1.1a5.5 5.5 0 1 0-7.8 7.8l1.1 1L12 21l7.7-7.6 1.1-1a5.5 5.5 0 0 0 0-7.8z"/></svg>
-        <em>2</em>
+    <div class="nav__right">
+      <button type="button" class="nav__link nav__link--hide" aria-haspopup="true">
+        <span>United States · English</span>
       </button>
-      <button type="button" class="util-btn" aria-label="Account">
-        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
-      </button>
-      <button type="button" class="util-btn util-btn--cart" id="openCart" aria-label="Cart">
-        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M5 7h15l-1.5 11a2 2 0 0 1-2 1.7H8.5a2 2 0 0 1-2-1.7L5 7z"/><path d="M9 7V5a3 3 0 0 1 6 0v2"/></svg>
+      <a href="#" class="nav__link" aria-label="Search">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.35-4.35"/></svg>
+      </a>
+      <a href="#" class="nav__link" aria-label="Account">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+      </a>
+      <button type="button" class="nav__link nav__bag" id="openCart" aria-label="Bag">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2"><path d="M5 7h15l-1.5 11a2 2 0 0 1-2 1.7H8.5a2 2 0 0 1-2-1.7L5 7z"/><path d="M9 7V5a3 3 0 0 1 6 0v2"/></svg>
         <em data-cart-count>0</em>
       </button>
     </div>
   </div>
-
-  <!-- Category nav -->
-  <nav class="cat-nav" aria-label="Product categories">
-    <div class="cat-nav__inner">
-      <a class="cat-chip is-active" href="#health">
-        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 21s-7-4.5-7-10a5 5 0 0 1 9-3 5 5 0 0 1 9 3c0 5.5-7 10-7 10z"/></svg>
-        Health &amp; Strength
-      </a>
-      <a class="cat-chip" href="#beauty">
-        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="12" r="8"/><path d="M12 8v8M8 12h8"/></svg>
-        Beauty &amp; Wellness
-      </a>
-      <a class="cat-chip" href="#hygiene">
-        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 3c2 4 4 6 4 9a4 4 0 1 1-8 0c0-3 2-5 4-9z"/></svg>
-        Home &amp; Hygiene
-      </a>
-      <a class="cat-chip" href="#food">
-        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M17 8C8 10 6 16 4 21l2 1 1-2 1 .3c11 0 14-17 14-17-1 2-8 2-13 3-5 1-7 5-7 7s2 4 2 4C7 8 17 8 17 8z"/></svg>
-        Food &amp; Drinks
-      </a>
-      <a class="cat-chip cat-chip--sale" href="#promos">
-        Promotions
-      </a>
-    </div>
-  </nav>
 </header>
+
+<!-- ========== Side drawer menu ========== -->
+<aside class="sidemenu" id="sideMenu" aria-hidden="true">
+  <div class="sidemenu__inner">
+    <button type="button" class="sidemenu__close" aria-label="Close menu" id="menuClose">Close</button>
+    <nav>
+      <a href="#" data-sub="new">The Season</a>
+      <a href="#" data-sub="shop">Shop</a>
+      <a href="#" data-sub="farms">Our Farms</a>
+      <a href="#" data-sub="services">Services</a>
+      <a href="#" data-sub="journal">Journal</a>
+      <a href="#" data-sub="about">About</a>
+    </nav>
+    <div class="sidemenu__foot">
+      <small>United States · English</small>
+      <small>hello@greenkart.demo · +1 800 123 4567</small>
+    </div>
+  </div>
+</aside>
+<div class="scrim" id="menuScrim"></div>
 
 <main id="main">
 
 <!-- ========== Hero ========== -->
-<section class="hero">
-  <div class="hero__shape" aria-hidden="true"></div>
-  <div class="hero__leaf hero__leaf--1" aria-hidden="true"></div>
-  <div class="hero__leaf hero__leaf--2" aria-hidden="true"></div>
-  <div class="hero__leaf hero__leaf--3" aria-hidden="true"></div>
+<section class="hero" aria-label="Current collection">
+  <div class="hero__stage">
+    <figure class="hero__slide is-in" data-img="0">
+      <img src="https://images.unsplash.com/photo-1488459716781-31db52582fe9?w=2400&q=90&auto=format&fit=crop" alt="" />
+    </figure>
+    <figure class="hero__slide" data-img="1">
+      <img src="https://images.unsplash.com/photo-1464226184884-fa280b87c399?w=2400&q=90&auto=format&fit=crop" alt="" />
+    </figure>
+    <figure class="hero__slide" data-img="2">
+      <img src="https://images.unsplash.com/photo-1506617420156-8e4536971650?w=2400&q=90&auto=format&fit=crop" alt="" />
+    </figure>
+  </div>
+  <div class="hero__overlay" aria-hidden="true"></div>
+  <div class="hero__caption">
+    <p class="eyebrow">The Spring Collection</p>
+    <h1>A quieter kind<br/><em>of harvest.</em></h1>
+    <a href="#season" class="cta-line">Discover <span aria-hidden="true">→</span></a>
+  </div>
+  <div class="hero__ticker" aria-hidden="true">
+    <span class="is-in"></span><span></span><span></span>
+  </div>
+</section>
 
-  <div class="hero__inner">
-    <div class="hero__lead">
-      <img class="hero__photo"
-           src="https://images.unsplash.com/photo-1511895426328-dc8714191300?w=900&q=85&auto=format&fit=crop"
-           alt="A smiling family on a green hillside." />
-      <div class="hero__copy">
-        <p class="eyebrow">10 Years of natural care</p>
-        <h1>Wellness starts<br/>with what you eat.</h1>
-        <p class="hero__desc">
-          We curate certified-organic food, herbal supplements, and clean personal care from small producers across the country — delivered to your door.
-        </p>
-        <div class="hero__dots" aria-hidden="true">
-          <span class="is-active"></span><span></span><span></span>
+<!-- ========== The season intro ========== -->
+<section class="season" id="season">
+  <div class="season__inner">
+    <p class="eyebrow reveal">April 2026 · Volume Twelve</p>
+    <h2 class="reveal reveal--delay">
+      Every spring we release a single small collection —<br/>
+      grown, harvested and shipped within seven days.
+    </h2>
+    <p class="lede reveal reveal--delay-2">
+      One hundred and twenty cooperative farms. Forty-eight hours from field to door. No cold-storage. No compromise.
+    </p>
+  </div>
+</section>
+
+<!-- ========== Three editorial tiles ========== -->
+<section class="editorial-3">
+  <figure class="tile reveal">
+    <a href="#">
+      <img src="https://images.unsplash.com/photo-1610832958506-aa56368176cf?w=1200&q=90&auto=format&fit=crop" alt="Closely framed ripe wild blueberries in soft daylight." />
+    </a>
+    <figcaption>
+      <span class="tile__cat">Orchards</span>
+      <h3>Rare stone &amp; pome fruit</h3>
+    </figcaption>
+  </figure>
+  <figure class="tile reveal reveal--delay">
+    <a href="#">
+      <img src="https://images.unsplash.com/photo-1518977676601-b53f82aba655?w=1200&q=90&auto=format&fit=crop" alt="A harvest of mixed organic greens on linen." />
+    </a>
+    <figcaption>
+      <span class="tile__cat">Vegetables</span>
+      <h3>First of the season greens</h3>
+    </figcaption>
+  </figure>
+  <figure class="tile reveal reveal--delay-2">
+    <a href="#">
+      <img src="https://images.unsplash.com/photo-1619566636858-adf3ef46400b?w=1200&q=90&auto=format&fit=crop" alt="A glass bottle of milk on a simple wooden surface." />
+    </a>
+    <figcaption>
+      <span class="tile__cat">The dairy</span>
+      <h3>From the valley's best herds</h3>
+    </figcaption>
+  </figure>
+</section>
+
+<!-- ========== Full-bleed feature ========== -->
+<section class="feature" aria-label="Featured story">
+  <img class="feature__img"
+       src="https://images.unsplash.com/photo-1464226184884-fa280b87c399?w=2400&q=90&auto=format&fit=crop"
+       alt="A farmer walking between rows of cultivated fields at golden hour." />
+  <div class="feature__overlay"></div>
+  <figcaption class="feature__cap">
+    <p class="eyebrow eyebrow--light">The Ortega Farm</p>
+    <h2>Four generations,<br/><em>one valley.</em></h2>
+    <p class="lede lede--light">
+      Seventy years of soil amendment, refined at the dinner table. The result is a tomato that tastes of sunshine and a little of iron.
+    </p>
+    <a href="#" class="cta-line cta-line--light">Read the journal <span aria-hidden="true">→</span></a>
+  </figcaption>
+</section>
+
+<!-- ========== Collection grid (alternating large) ========== -->
+<section class="collection" id="shop">
+  <header class="collection__head">
+    <p class="eyebrow reveal">Volume Twelve</p>
+    <h2 class="reveal reveal--delay">The collection.</h2>
+  </header>
+  <div class="collection__grid" id="collectionGrid"></div>
+  <div class="collection__foot">
+    <a href="#" class="cta-line">View the archive <span aria-hidden="true">→</span></a>
+  </div>
+</section>
+
+<!-- ========== Services split ========== -->
+<section class="services" id="services">
+  <div class="services__inner">
+    <div class="services__col reveal">
+      <p class="eyebrow">Services</p>
+      <h2>Care, carried<br/><em>a little further.</em></h2>
+    </div>
+    <ul class="services__list">
+      <li class="reveal">
+        <span class="services__num">01</span>
+        <div>
+          <h4>Private client</h4>
+          <p>A dedicated advisor, a weekly conversation, and a pantry curated to your table.</p>
+          <a href="#" class="underline">Request an introduction</a>
         </div>
-      </div>
-    </div>
-
-    <aside class="hero__panels">
-      <div class="panel panel--ask">
-        <h4>Have questions?</h4>
-        <p>Our in-house nutritionists can help you choose. Call us or open a chat — we read every message.</p>
-        <a href="#" class="panel__cta">Ask a specialist →</a>
-      </div>
-      <div class="panel panel--ship">
-        <h4>Nationwide delivery</h4>
-        <p>Same-week shipping across 24 states via carbon-neutral courier. Free over $50.</p>
-      </div>
-      <div class="panel panel--hours">
-        <h4>Working hours</h4>
-        <p>Orders placed before <strong>3 pm ET, Mon–Fri</strong>, ship the same day.</p>
-      </div>
-    </aside>
-  </div>
-</section>
-
-<!-- ========== Advisor floating banner ========== -->
-<section class="advisor" aria-label="Specialist advice">
-  <div class="advisor__inner">
-    <img src="https://images.unsplash.com/photo-1580489944761-15a19d654956?w=400&q=85&auto=format&fit=crop" alt="Portrait of a smiling wellness specialist in natural light." />
-    <div class="advisor__text">
-      <h3>Do you need advice?</h3>
-      <p>A wellness specialist from our team will gladly guide you through any of our products. Call <strong>+1 800 123 4567</strong>, Mon – Fri, 10am – 6pm ET.</p>
-    </div>
-    <a href="#" class="btn btn--white">Ask a question →</a>
-  </div>
-</section>
-
-<!-- ========== Trusted brands strip ========== -->
-<section class="trusted">
-  <p class="trusted__label">Trusted suppliers &amp; partners</p>
-  <ul class="trusted__list">
-    <li><span>Green Valley</span></li>
-    <li><span>PureLeaf Co.</span></li>
-    <li><span>Ciccareli</span></li>
-    <li><span>Cosmonatura</span></li>
-    <li><span>Baltic Herb</span></li>
-    <li><span>Konopka&amp;Sons</span></li>
-    <li><span>Natural Science</span></li>
-    <li><span>Smart Organic</span></li>
-  </ul>
-</section>
-
-<!-- ========== Category mega-blocks ========== -->
-<section class="mega" id="health">
-  <header class="mega__head">
-    <div class="mega__title">
-      <svg class="mega__icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#72b93e" stroke-width="1.8"><path d="M12 21s-7-4.5-7-10a5 5 0 0 1 9-3 5 5 0 0 1 9 3c0 5.5-7 10-7 10z"/></svg>
-      <h2>Health &amp; Strength</h2>
-    </div>
-  </header>
-  <div class="mega__grid">
-    <ul class="mega__cats">
-      <li><a href="#">Antioxidants</a></li>
-      <li><a href="#">Vitamins &amp; Minerals</a></li>
-      <li><a href="#">Amino Acids</a></li>
-      <li><a href="#">Fatty Acids &amp; Omega-3</a></li>
-      <li><a href="#">Herbs &amp; Tinctures</a></li>
-      <li><a href="#">Mono &amp; Formulas</a></li>
-      <li><a href="#">Immunostimulants</a></li>
-      <li><a href="#">Probiotics &amp; Enzymes</a></li>
-      <li><a href="#">Bach Flower Drops</a></li>
-      <li><a href="#">Schüssler Salts</a></li>
-      <li><a href="#">Detoxification</a></li>
-      <li><a href="#">Memory &amp; Focus</a></li>
+      </li>
+      <li class="reveal reveal--delay">
+        <span class="services__num">02</span>
+        <div>
+          <h4>Farm visits</h4>
+          <p>Walk the fields with the growers. Two Sundays a month from April through October.</p>
+          <a href="#" class="underline">Reserve a visit</a>
+        </div>
+      </li>
+      <li class="reveal reveal--delay-2">
+        <span class="services__num">03</span>
+        <div>
+          <h4>Corporate accounts</h4>
+          <p>Weekly produce for restaurants, studios and small offices. Bespoke cadence and packaging.</p>
+          <a href="#" class="underline">Open an account</a>
+        </div>
+      </li>
+      <li class="reveal reveal--delay-3">
+        <span class="services__num">04</span>
+        <div>
+          <h4>Gifts &amp; subscriptions</h4>
+          <p>A letter-bound card, a seasonal box, four, eight, or twelve issues a year.</p>
+          <a href="#" class="underline">Send a subscription</a>
+        </div>
+      </li>
     </ul>
-
-    <div class="mega__products" data-cat-grid="health"></div>
-
-    <a href="#" class="mega__cta">Everything for health →</a>
-  </div>
-  <div class="mega__dots" aria-hidden="true">
-    <span class="is-active"></span><span></span><span></span><span></span>
   </div>
 </section>
 
-<section class="mega mega--beauty" id="beauty">
-  <header class="mega__head">
-    <div class="mega__title">
-      <svg class="mega__icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#d77fab" stroke-width="1.8"><circle cx="12" cy="12" r="7"/><path d="M12 5v14M5 12h14"/></svg>
-      <h2>Beauty &amp; Wellness</h2>
-    </div>
-  </header>
-  <div class="mega__grid">
-    <ul class="mega__cats">
-      <li><a href="#">Bio Cosmetics</a></li>
-      <li><a href="#">Therapeutic Skincare</a></li>
-      <li><a href="#">Decorative Cosmetics</a></li>
-      <li><a href="#">Facial Care</a></li>
-      <li><a href="#">Hair Care</a></li>
-      <li><a href="#">Body Care</a></li>
-      <li><a href="#">Base Oils</a></li>
-      <li><a href="#">Essential Oils</a></li>
-      <li><a href="#">Men's Grooming</a></li>
-      <li><a href="#">Baby Care</a></li>
-    </ul>
-    <div class="mega__products" data-cat-grid="beauty"></div>
-    <a href="#" class="mega__cta">Explore beauty →</a>
-  </div>
-</section>
-
-<section class="mega mega--hygiene" id="hygiene">
-  <header class="mega__head">
-    <div class="mega__title">
-      <svg class="mega__icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#3aa3d9" stroke-width="1.8"><path d="M12 3c2 4 4 6 4 9a4 4 0 1 1-8 0c0-3 2-5 4-9z"/></svg>
-      <h2>Home &amp; Hygiene</h2>
-    </div>
-  </header>
-  <div class="mega__grid">
-    <ul class="mega__cats">
-      <li><a href="#">Oral Hygiene</a></li>
-      <li><a href="#">Intimate Care</a></li>
-      <li><a href="#">Natural Deodorants</a></li>
-      <li><a href="#">Hand Soap</a></li>
-      <li><a href="#">Dish &amp; Laundry</a></li>
-      <li><a href="#">Household Cleaners</a></li>
-      <li><a href="#">Reusable Goods</a></li>
-    </ul>
-    <div class="mega__products" data-cat-grid="hygiene"></div>
-    <a href="#" class="mega__cta">Shop hygiene →</a>
-  </div>
-</section>
-
-<section class="mega mega--food" id="food">
-  <header class="mega__head">
-    <div class="mega__title">
-      <svg class="mega__icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#72b93e" stroke-width="1.8"><path d="M17 8C8 10 6 16 4 21l2 1 1-2 1 .3c11 0 14-17 14-17-1 2-8 2-13 3-5 1-7 5-7 7s2 4 2 4C7 8 17 8 17 8z"/></svg>
-      <h2>Food &amp; Drinks</h2>
-    </div>
-  </header>
-  <div class="mega__grid">
-    <ul class="mega__cats">
-      <li><a href="#">Superfoods</a></li>
-      <li><a href="#">Herbal Teas</a></li>
-      <li><a href="#">Honey &amp; Syrups</a></li>
-      <li><a href="#">Cold-Pressed Oils</a></li>
-      <li><a href="#">Nuts &amp; Seeds</a></li>
-      <li><a href="#">Grains &amp; Flours</a></li>
-      <li><a href="#">Dried Fruit</a></li>
-      <li><a href="#">Plant-Based Milks</a></li>
-      <li><a href="#">Coffee &amp; Cacao</a></li>
-    </ul>
-    <div class="mega__products" data-cat-grid="food"></div>
-    <a href="#" class="mega__cta">Everything for the pantry →</a>
-  </div>
-</section>
-
-<!-- ========== Commercial stores card ========== -->
+<!-- ========== Find a store ========== -->
 <section class="stores">
-  <div class="stores__card">
-    <div class="stores__head">
-      <svg width="22" height="22" viewBox="0 0 24 24" fill="#fff" stroke="#fff" stroke-width="0" aria-hidden="true"><path d="M12 2a7 7 0 0 0-7 7c0 5 7 13 7 13s7-8 7-13a7 7 0 0 0-7-7zm0 9a2 2 0 1 1 0-4 2 2 0 0 1 0 4z"/></svg>
-      <h3>Our physical store</h3>
+  <div class="stores__inner">
+    <div class="stores__txt reveal">
+      <p class="eyebrow">Our table</p>
+      <h2>Burlington,<br/>Vermont.</h2>
+      <p class="lede">
+        Our first market opened in a converted dairy barn on Maple Grove Road. Coffee is on from ten.
+      </p>
+      <address>
+        482 Maple Grove Road<br/>
+        Burlington, Vermont 05401<br/>
+        +1 800 123 4567
+      </address>
+      <a href="#" class="cta-line">Hours &amp; directions <span aria-hidden="true">→</span></a>
     </div>
-    <dl>
-      <div><dt>Address</dt><dd>482 Maple Grove Rd, Burlington, VT 05401</dd></div>
-      <div><dt>Monday – Friday</dt><dd>10:00 – 18:00</dd></div>
-      <div><dt>Saturday</dt><dd>10:00 – 16:00</dd></div>
-      <div><dt>Sunday</dt><dd>Closed</dd></div>
-      <div><dt>Phone</dt><dd>+1 800 123 4567</dd></div>
-    </dl>
-    <a href="#" class="btn btn--green-outline">Get directions →</a>
-  </div>
-</section>
-
-<!-- ========== Testimonials ========== -->
-<section class="reviews">
-  <header class="reviews__head">
-    <span class="eyebrow">What they say about us</span>
-    <h2>Real customers, real kitchens.</h2>
-  </header>
-  <div class="reviews__grid">
-    <figure class="review">
-      <div class="review__stars" aria-label="5 out of 5">★★★★★</div>
-      <blockquote>Excellent service. The herbs arrived the next day, packaged with care. I'll recommend you to my friends — keep up the good work!</blockquote>
-      <figcaption>
-        <div class="review__who"><strong>Kimberly A.</strong><span>Verified buyer · June 2025</span></div>
-        <span class="review__badge">Verified buyer</span>
-      </figcaption>
+    <figure class="stores__img reveal reveal--delay">
+      <img src="https://images.unsplash.com/photo-1615485290398-15efa7a7a4ad?w=1400&q=90&auto=format&fit=crop" alt="The interior of a small organic market at daybreak." loading="lazy"/>
     </figure>
-    <figure class="review">
-      <div class="review__stars" aria-label="5 out of 5">★★★★★</div>
-      <blockquote>Honest prices, proper provenance, and responsive customer support. My kids actually finish their meals now. Thank you for doing this properly.</blockquote>
-      <figcaption>
-        <div class="review__who"><strong>David O.</strong><span>Verified buyer · July 2025</span></div>
-        <span class="review__badge">Verified buyer</span>
-      </figcaption>
-    </figure>
-    <figure class="review">
-      <div class="review__stars" aria-label="5 out of 5">★★★★★</div>
-      <blockquote>The weekly box has become a family ritual. Everything arrives crisp, and I love seeing which farmer grew what. Genuinely fresh, genuinely organic.</blockquote>
-      <figcaption>
-        <div class="review__who"><strong>Sofia M.</strong><span>Verified buyer · August 2025</span></div>
-        <span class="review__badge">Verified buyer</span>
-      </figcaption>
-    </figure>
-  </div>
-</section>
-
-<!-- ========== Blog ========== -->
-<section class="blog" id="journal">
-  <header class="blog__head">
-    <span class="eyebrow">From our blog</span>
-    <a href="#" class="blog__all">All articles →</a>
-  </header>
-  <div class="blog__grid">
-    <article class="post">
-      <a href="#" class="post__img" aria-label="Read: Fighting cellulite — mission impossible?"><img src="https://images.unsplash.com/photo-1518611012118-696072aa579a?w=800&q=85&auto=format&fit=crop" alt="" loading="lazy"/></a>
-      <div class="post__body">
-        <span class="post__date">05 · 05 · 2025</span>
-        <h3><a href="#">Fighting cellulite — mission impossible?</a></h3>
-        <p>Summer approaches. More and more women are looking for an easy way to deal with the so-called "orange peel." The causes are many and often complex — diet, dehydration, weak circulation.</p>
-      </div>
-    </article>
-    <article class="post">
-      <a href="#" class="post__img" aria-label="Read: Gelatin vs hydrolysed collagen — what is the difference?"><img src="https://images.unsplash.com/photo-1490645935967-10de6ba17061?w=800&q=85&auto=format&fit=crop" alt="" loading="lazy"/></a>
-      <div class="post__body">
-        <span class="post__date">28 · 04 · 2025</span>
-        <h3><a href="#">Gelatin vs hydrolysed collagen — what's the difference?</a></h3>
-        <p>Gelatin comes from collagen. Hydrolysed collagen is further processed into smaller chains. Both are beneficial — the difference is how fast and how fully your body absorbs each.</p>
-      </div>
-    </article>
-    <article class="post">
-      <a href="#" class="post__img" aria-label="Read: Five spring greens worth waiting for"><img src="https://images.unsplash.com/photo-1464226184884-fa280b87c399?w=800&q=85&auto=format&fit=crop" alt="" loading="lazy"/></a>
-      <div class="post__body">
-        <span class="post__date">19 · 04 · 2025</span>
-        <h3><a href="#">Five spring greens worth waiting for.</a></h3>
-        <p>Asparagus, wild garlic, sorrel, pea shoots, and first-of-the-season spinach. Here's when each arrives, what to cook with it, and which local farms grow ours.</p>
-      </div>
-    </article>
   </div>
 </section>
 
 <!-- ========== Newsletter ========== -->
-<section class="newsletter">
-  <div class="newsletter__inner">
-    <div class="newsletter__text">
-      <span class="eyebrow">Stay in touch</span>
-      <h2>Exclusive offers &amp; wellness tips</h2>
-      <p>Subscribe for seasonal arrivals, recipes from our team, and subscriber-only 10% off your first order.</p>
-    </div>
-    <form class="newsletter__form" onsubmit="event.preventDefault(); this.querySelector('button').textContent='Subscribed ✓'; this.querySelector('input').value='';">
-      <input type="email" required placeholder="your@email.com" aria-label="Email address" />
-      <button type="submit" class="btn btn--green">Subscribe</button>
+<section class="signup">
+  <div class="signup__inner">
+    <h2 class="reveal">The Sunday letter.</h2>
+    <p class="reveal reveal--delay">One note each season from the fields. No discount codes — only a quiet recommendation.</p>
+    <form class="signup__form reveal reveal--delay-2" onsubmit="event.preventDefault();this.querySelector('button').textContent='Thank you';this.querySelector('input').value='';">
+      <input type="email" required placeholder="Email address" aria-label="Email address" />
+      <button type="submit">Subscribe <span aria-hidden="true">→</span></button>
     </form>
   </div>
 </section>
@@ -389,73 +252,69 @@
 
 <!-- ========== Footer ========== -->
 <footer class="foot">
-  <div class="foot__top">
-    <div class="foot__brand">
-      <a href="#" class="logo logo--foot">
-        <span class="logo__mark">
-          <svg width="40" height="40" viewBox="0 0 48 48">
-            <circle cx="24" cy="24" r="22" fill="#fff"/>
-            <path d="M24 12 C 16 18, 16 30, 24 38 C 32 30, 32 18, 24 12 Z" fill="#72b93e"/>
-            <path d="M24 12 L 24 38" stroke="#fff" stroke-width="1.5"/>
-          </svg>
-        </span>
-        <span class="logo__text">
-          <b>Green<strong>Kart</strong></b>
-          <small>created to care</small>
-        </span>
-      </a>
-      <p>One-stop organic shop: certified food, wellness, and natural care from trusted producers. Serving 24 states since 2023.</p>
-      <div class="foot__social">
-        <a href="#" aria-label="Facebook">f</a>
-        <a href="#" aria-label="Instagram">Ig</a>
-        <a href="#" aria-label="Pinterest">P</a>
-        <a href="#" aria-label="YouTube">▶</a>
-      </div>
+  <div class="foot__grid">
+    <div class="foot__col">
+      <h6>The House</h6>
+      <a href="#">About GreenKart</a>
+      <a href="#">Our farms</a>
+      <a href="#">Sustainability</a>
+      <a href="#">Press</a>
+      <a href="#">Careers</a>
     </div>
-    <div>
-      <h6>Company</h6>
-      <a href="#">About</a><a href="#">Our mission</a><a href="#">Certifications</a><a href="#">Press</a><a href="#">Careers</a>
+    <div class="foot__col">
+      <h6>Services</h6>
+      <a href="#">Private client</a>
+      <a href="#">Farm visits</a>
+      <a href="#">Corporate accounts</a>
+      <a href="#">Gifts &amp; subscriptions</a>
     </div>
-    <div>
-      <h6>Customer care</h6>
-      <a href="#">Shipping</a><a href="#">Returns</a><a href="#">FAQ</a><a href="#">Help center</a><a href="#">Contact us</a>
+    <div class="foot__col">
+      <h6>Client care</h6>
+      <a href="#">Shipping</a>
+      <a href="#">Returns</a>
+      <a href="#">Contact us</a>
+      <a href="#">FAQ</a>
     </div>
-    <div>
-      <h6>My account</h6>
-      <a href="#">Sign in</a><a href="#">Orders</a><a href="#">Subscriptions</a><a href="#">Wishlist</a><a href="#">Addresses</a>
+    <div class="foot__col">
+      <h6>Follow</h6>
+      <a href="#">Instagram</a>
+      <a href="#">Pinterest</a>
+      <a href="#">Substack</a>
+      <a href="#">YouTube</a>
     </div>
-    <div>
-      <h6>Contact</h6>
-      <p class="foot__contact">
-        <strong>+1 800 123 4567</strong><br/>
-        hello@greenkart.demo<br/>
-        482 Maple Grove Rd<br/>Burlington, VT 05401
-      </p>
+    <div class="foot__col foot__col--region">
+      <h6>Region</h6>
+      <select aria-label="Country and currency">
+        <option>United States · USD</option>
+        <option>Canada · CAD</option>
+        <option>United Kingdom · GBP</option>
+        <option>Europe · EUR</option>
+        <option>Japan · JPY</option>
+      </select>
+      <small>Shipping available to 24 states, $50 minimum.</small>
     </div>
   </div>
   <div class="foot__bot">
-    <div class="foot__pay">
-      <span>Visa</span><span>Mastercard</span><span>Amex</span><span>Apple Pay</span><span>Google Pay</span><span>PayPal</span><span>Klarna</span>
-    </div>
-    <small>© 2026 GreenKart · Design demo, not a live retailer · <a href="#">Privacy</a> · <a href="#">Terms</a> · <a href="#">Cookies</a></small>
+    <span class="foot__mark">GreenKart</span>
+    <small>© 2026 · A design demo, not a live retailer · <a href="#">Privacy</a> · <a href="#">Terms</a> · <a href="#">Cookies</a> · <a href="#">Accessibility</a></small>
   </div>
 </footer>
 
 <!-- Cart drawer -->
-<aside class="drawer" id="cartDrawer" aria-hidden="true" aria-label="Your cart">
+<aside class="drawer" id="cartDrawer" aria-hidden="true" aria-label="Your bag">
   <header class="drawer__head">
-    <span>Your cart</span>
-    <button type="button" class="drawer__close" aria-label="Close">✕</button>
+    <span>Your bag</span>
+    <button type="button" class="drawer__close" aria-label="Close">Close</button>
   </header>
-  <div class="drawer__body" id="cartBody"><p class="drawer__empty">Your cart is empty.</p></div>
+  <div class="drawer__body" id="cartBody"><p class="drawer__empty">Your bag is empty.</p></div>
   <footer class="drawer__foot">
     <div class="ship-bar" id="shipBar" data-threshold="50">
-      <div class="ship-bar__msg" id="shipMsg">$50.00 away from free shipping</div>
+      <div class="ship-bar__msg" id="shipMsg">$50.00 away from complimentary delivery</div>
       <div class="ship-bar__rail"><div class="ship-bar__fill" id="shipFill"></div></div>
     </div>
     <div class="drawer__total"><span>Subtotal</span><b data-cart-total-drawer>$0.00</b></div>
-    <a href="#" class="btn btn--green btn--block">Checkout</a>
-    <p class="drawer__trust">🔒 Secure checkout · 128-bit encryption</p>
+    <a href="#" class="btn-ink btn--block">Checkout <span aria-hidden="true">→</span></a>
+    <p class="drawer__trust">Secure checkout · 128-bit encryption</p>
   </footer>
 </aside>
 <div class="scrim" id="cartScrim"></div>
