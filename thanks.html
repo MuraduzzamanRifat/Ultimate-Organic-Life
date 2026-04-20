@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Thank you — GreenKart Organics</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght,SOFT@9..144,200;9..144,300;9..144,400;9..144,500&family=Inter:wght@300;400;500&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="styles.css" />
+</head>
+<body data-page="thanks">
+
+<a class="skip" href="#main">Skip to content</a>
+<div id="shell-header"></div>
+
+<main id="main">
+
+<section class="thanks-hero">
+  <p class="eyebrow">Order confirmed</p>
+  <h1>Thank you.<br/><em>Your harvest is on its way.</em></h1>
+  <p class="lede">A confirmation has been sent to your inbox. We'll email again the morning it ships.</p>
+
+  <div class="thanks-order" id="thankBody">
+    <h3>Order summary</h3>
+    <div class="thanks-key"><span>Order number</span><b id="orderId">—</b></div>
+    <div class="thanks-key"><span>Confirmation sent to</span><b id="orderEmail">—</b></div>
+    <div class="thanks-key"><span>Total</span><b id="orderTotal">—</b></div>
+    <hr class="thanks-hr" />
+    <div id="orderItems"></div>
+  </div>
+
+  <div class="centered-cta">
+    <a href="shop.html" class="btn-ink">Continue shopping <span aria-hidden="true">→</span></a>
+  </div>
+</section>
+
+</main>
+
+<div id="shell-footer"></div>
+<div id="shell-drawer"></div>
+
+<script src="data.js"></script>
+<script src="script.js"></script>
+</body>
+</html>

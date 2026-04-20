@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Your bag — GreenKart Organics</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght,SOFT@9..144,200;9..144,300;9..144,400;9..144,500&family=Inter:wght@300;400;500&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="styles.css" />
+</head>
+<body data-page="cart">
+
+<a class="skip" href="#main">Skip to content</a>
+<div id="shell-header"></div>
+
+<main id="main">
+
+<section class="page-head">
+  <nav class="breadcrumb" aria-label="Breadcrumb"><a href="index.html">Home</a><span>/</span><span>Your bag</span></nav>
+  <h1>Your bag.</h1>
+  <p>Review your order. Quantities update immediately. Shipping calculated at checkout.</p>
+</section>
+
+<section class="cart-wrap">
+  <div id="cartRows"></div>
+
+  <aside class="cart-sum" id="cartSummary">
+    <h3>Order summary</h3>
+    <div class="cart-sum__row sub"><span>Subtotal</span><b id="sumSubtotal">$0.00</b></div>
+    <div class="cart-sum__row ship"><span>Shipping</span><b id="sumShipping">—</b></div>
+    <p class="cart-sum__note" id="sumShippingNote">—</p>
+    <div class="cart-sum__row tax"><span>Estimated tax</span><b id="sumTax">$0.00</b></div>
+    <div class="cart-sum__row total"><span>Total</span><b id="sumTotal">$0.00</b></div>
+    <div class="cart-sum__btns">
+      <a href="checkout.html" class="btn-ink btn--block">Proceed to checkout <span aria-hidden="true">→</span></a>
+      <a href="shop.html" class="btn-ghost btn--block">Continue shopping</a>
+    </div>
+    <div class="cart-sum__pay">
+      Secure checkout · <span>Visa</span><span>MC</span><span>Amex</span><span>Apple Pay</span>
+    </div>
+  </aside>
+</section>
+
+</main>
+
+<div id="shell-footer"></div>
+<div id="shell-drawer"></div>
+
+<script src="data.js"></script>
+<script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Contact — GreenKart Organics</title>
+<meta name="description" content="Questions, partnerships, press, or a farm visit. We answer the phone ourselves." />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght,SOFT@9..144,200;9..144,300;9..144,400;9..144,500&family=Inter:wght@300;400;500&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="styles.css" />
+</head>
+<body data-page="contact">
+
+<a class="skip" href="#main">Skip to content</a>
+<div id="shell-header"></div>
+
+<main id="main">
+
+<section class="page-head">
+  <nav class="breadcrumb" aria-label="Breadcrumb"><a href="index.html">Home</a><span>/</span><span>Contact</span></nav>
+  <h1>Say hello.</h1>
+  <p>We read every message. A real person replies within one working day.</p>
+</section>
+
+<section class="contact-wrap">
+  <div class="contact-info">
+    <h2>Our table.</h2>
+    <p>Drop by the market in Burlington — coffee is on from ten — or write to us below.</p>
+    <dl>
+      <div><dt>By phone</dt><dd>+1 800 123 4567</dd></div>
+      <div><dt>By email</dt><dd>hello@greenkart.demo</dd></div>
+      <div><dt>Press enquiries</dt><dd>press@greenkart.demo</dd></div>
+      <div><dt>Wholesale</dt><dd>trade@greenkart.demo</dd></div>
+      <div><dt>The market</dt><dd>482 Maple Grove Road<br/>Burlington, Vermont 05401<br/>Mon–Sat · 10–18</dd></div>
+    </dl>
+  </div>
+
+  <form class="contact-form" id="contactForm" novalidate>
+    <div class="co-field-row">
+      <div class="co-field"><label for="cFirst">First name</label><input id="cFirst" required/></div>
+      <div class="co-field"><label for="cLast">Last name</label><input id="cLast" required/></div>
+    </div>
+    <div class="co-field"><label for="cEmail">Email address</label><input id="cEmail" type="email" required/></div>
+    <div class="co-field">
+      <label for="cTopic">Topic</label>
+      <select id="cTopic">
+        <option>General enquiry</option>
+        <option>Order support</option>
+        <option>Farm visit</option>
+        <option>Wholesale</option>
+        <option>Press</option>
+      </select>
+    </div>
+    <div class="co-field"><label for="cMsg">Message</label><textarea id="cMsg" required placeholder="Tell us what's on your mind."></textarea></div>
+    <button type="submit" class="btn-ink">Send message <span aria-hidden="true">→</span></button>
+    <p class="contact-status" id="contactStatus" hidden>Thank you — we'll write back within one working day.</p>
+  </form>
+</section>
+
+</main>
+
+<div id="shell-footer"></div>
+<div id="shell-drawer"></div>
+
+<script src="data.js"></script>
+<script src="script.js"></script>
+</body>
+</html>

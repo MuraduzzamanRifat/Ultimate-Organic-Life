@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Product — GreenKart Organics</title>
+<meta name="description" content="Organic produce, dairy, bakery and pantry goods from small cooperative farms." />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght,SOFT@9..144,200;9..144,300;9..144,400;9..144,500&family=Inter:wght@300;400;500&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="styles.css" />
+</head>
+<body data-page="product">
+
+<a class="skip" href="#main">Skip to content</a>
+<div id="shell-header"></div>
+
+<main id="main">
+
+<nav class="breadcrumb pdp-crumb" aria-label="Breadcrumb">
+  <a href="index.html">Home</a><span>/</span><a href="shop.html">Shop</a><span>/</span><span id="crumbCat"></span><span>/</span><span id="crumbTitle"></span>
+</nav>
+
+<section class="pdp">
+  <div class="pdp__gallery">
+    <div class="pdp-thumbs" id="pdpThumbs"></div>
+    <figure class="pdp__main"><img id="pdpMain" src="" alt=""/></figure>
+  </div>
+
+  <div class="pdp__side">
+    <p class="pdp__rating"><span id="pdpRatingVal">4.9</span><span id="pdpReviewsCount">(0 reviews)</span></p>
+    <h1 class="pdp__title" id="pdpTitle">—</h1>
+    <p class="pdp__subtitle" id="pdpSubtitle">—</p>
+    <div class="pdp__price" id="pdpPrice">—</div>
+    <p class="pdp__desc" id="pdpDesc">—</p>
+    <div class="pdp__tags" id="pdpTags"></div>
+
+    <dl class="pdp__facts">
+      <div><dt>Origin</dt><dd id="pdpOrigin">—</dd></div>
+      <div><dt>Weight</dt><dd id="pdpWeight">—</dd></div>
+      <div><dt>Keeps</dt><dd id="pdpKeeps">—</dd></div>
+      <div><dt>Stock</dt><dd id="pdpStock">—</dd></div>
+    </dl>
+
+    <div class="pdp__buy">
+      <div class="pdp__qty">
+        <button type="button" id="pdpMinus" aria-label="Decrease">−</button>
+        <input type="number" id="pdpQty" value="1" min="1" aria-label="Quantity"/>
+        <button type="button" id="pdpPlus" aria-label="Increase">+</button>
+      </div>
+      <button type="button" class="btn-ink pdp__add" id="pdpAdd">Add to bag <span aria-hidden="true">→</span></button>
+      <button type="button" class="pdp__wish" id="pdpWish" data-wish="" aria-label="Save to wishlist">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.7l-1-1.1a5.5 5.5 0 1 0-7.8 7.8l1.1 1L12 21l7.7-7.6 1.1-1a5.5 5.5 0 0 0 0-7.8z"/></svg>
+      </button>
+    </div>
+
+    <figure class="grower">
+      <span class="grower__dot" aria-hidden="true">❦</span>
+      <figcaption class="grower__body">
+        <strong id="pdpFarmer">—</strong>
+        <small id="pdpFarmerSince">—</small>
+        <q id="pdpFarmerQuote">—</q>
+      </figcaption>
+    </figure>
+
+    <div class="acc is-open">
+      <button type="button" class="acc__head">Description</button>
+      <div class="acc__body"><p id="pdpStory">—</p></div>
+    </div>
+    <div class="acc">
+      <button type="button" class="acc__head">Delivery &amp; returns</button>
+      <div class="acc__body"><p>Complimentary delivery on orders over $50. Ships within 48 hours of harvest. Returns accepted within 14 days for any non-perishable item.</p></div>
+    </div>
+    <div class="acc">
+      <button type="button" class="acc__head">Certifications</button>
+      <div class="acc__body"><p>All products are USDA Organic certified or wild-harvested under sustainable land-use agreements. Documentation available on request.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="pdp-reviews">
+  <div class="section__head">
+    <p class="eyebrow">Client notes</p>
+    <h2 class="pdp-related-h2">What customers say.</h2>
+  </div>
+  <div id="pdpReviewList" class="rv-list"></div>
+</section>
+
+<section class="pdp-related">
+  <h2>You may also like.</h2>
+  <div id="pdpRelated" class="prod-grid"></div>
+</section>
+
+</main>
+
+<div id="shell-footer"></div>
+<div id="shell-drawer"></div>
+
+<script src="data.js"></script>
+<script src="script.js"></script>
+</body>
+</html>

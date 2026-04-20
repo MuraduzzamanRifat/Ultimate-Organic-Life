@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Shop — GreenKart Organics</title>
+<meta name="description" content="Browse the full seasonal harvest — organic fruits, vegetables, dairy, bakery and pantry goods from small cooperative farms." />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght,SOFT@9..144,200;9..144,300;9..144,400;9..144,500&family=Inter:wght@300;400;500&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="styles.css" />
+</head>
+<body data-page="shop">
+
+<a class="skip" href="#main">Skip to content</a>
+<div id="shell-header"></div>
+
+<main id="main">
+
+<section class="page-head">
+  <nav class="breadcrumb" aria-label="Breadcrumb">
+    <a href="index.html">Home</a><span>/</span><span>Shop</span>
+  </nav>
+  <h1>The harvest.</h1>
+  <p>Twenty items from a hundred and twenty cooperative farms. Picked this week, at your door within forty-eight hours.</p>
+</section>
+
+<section class="shop-wrap">
+  <aside class="shop-side">
+    <div class="shop-side__group shop-search">
+      <h6>Search</h6>
+      <input type="search" id="searchIn" placeholder="Search the harvest…" aria-label="Search products" />
+    </div>
+    <div class="shop-side__group">
+      <h6>Categories</h6>
+      <div id="catList"></div>
+    </div>
+    <div class="shop-side__group">
+      <h6>Values</h6>
+      <div class="cat-row"><span>Certified organic</span></div>
+      <div class="cat-row"><span>Fair wage</span></div>
+      <div class="cat-row"><span>Wild-harvested</span></div>
+      <div class="cat-row"><span>Single origin</span></div>
+    </div>
+    <div class="shop-side__group">
+      <h6>Delivery</h6>
+      <p class="shop-side__note">Complimentary delivery on orders over $50. Carbon-neutral courier.</p>
+    </div>
+  </aside>
+
+  <section class="shop-main">
+    <header class="shop-main__head">
+      <span class="shop-main__count" id="resultCount">20 items</span>
+      <div class="shop-sort">
+        <label for="sortBy">Sort by</label>
+        <select id="sortBy" aria-label="Sort">
+          <option value="featured">Featured</option>
+          <option value="newest">Newest</option>
+          <option value="price-asc">Price · Low to high</option>
+          <option value="price-desc">Price · High to low</option>
+          <option value="rating">Rating</option>
+        </select>
+      </div>
+    </header>
+    <div id="shopGrid" class="prod-grid"></div>
+  </section>
+</section>
+
+</main>
+
+<div id="shell-footer"></div>
+<div id="shell-drawer"></div>
+
+<script src="data.js"></script>
+<script src="script.js"></script>
+</body>
+</html>

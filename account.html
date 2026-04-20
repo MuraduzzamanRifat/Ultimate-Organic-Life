@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Account — GreenKart Organics</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght,SOFT@9..144,200;9..144,300;9..144,400;9..144,500&family=Inter:wght@300;400;500&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="styles.css" />
+</head>
+<body data-page="account">
+
+<a class="skip" href="#main">Skip to content</a>
+<div id="shell-header"></div>
+
+<main id="main">
+
+<section class="page-head">
+  <nav class="breadcrumb" aria-label="Breadcrumb"><a href="index.html">Home</a><span>/</span><span>Account</span></nav>
+  <h1>Your account.</h1>
+  <p>Sign in to see your orders, saved items, and subscription.</p>
+</section>
+
+<section class="account-wrap">
+  <div class="signin">
+    <h2>Sign in</h2>
+    <p>Demo form — no credentials are sent or stored.</p>
+    <form id="signinForm" class="contact-form" novalidate>
+      <div class="co-field"><label for="siEmail">Email</label><input id="siEmail" type="email" required/></div>
+      <div class="co-field"><label for="siPass">Password</label><input id="siPass" type="password" required/></div>
+      <button type="submit" class="btn-ink">Sign in <span aria-hidden="true">→</span></button>
+      <p class="contact-status" id="signinStatus" hidden>Demo mode — no session created.</p>
+    </form>
+  </div>
+
+  <div>
+    <div class="wishlist-head">
+      <p class="eyebrow">Saved for later</p>
+      <h2>Wishlist.</h2>
+    </div>
+    <div id="wishList"></div>
+  </div>
+</section>
+
+</main>
+
+<div id="shell-footer"></div>
+<div id="shell-drawer"></div>
+
+<script src="data.js"></script>
+<script src="script.js"></script>
+</body>
+</html>
