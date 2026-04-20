@@ -1,140 +1,127 @@
 /* ============================================================
-   GreenKart Organics — international eCommerce
-   Shop grid, horizontal showcase, filters, cart, reveals.
+   GreenKart — bright health-store interactions
+   Mega mini cards, cart drawer with free-shipping progress,
+   toast, category chips.
    ============================================================ */
 
 const PRODUCTS = [
-  { id: 1,  cat: 'fruits',     title: 'Wild Hillside Blueberries',
-    img: 'https://images.unsplash.com/photo-1498557850523-fd3d118b962e?w=900&q=85&auto=format&fit=crop',
-    price: 6.25, old: 8.00, weight: '125 g', origin: 'Hardwick, VT', tag: 'Bestseller' },
-  { id: 2,  cat: 'vegetables', title: 'Heirloom Brandywine Tomatoes',
-    img: 'https://images.unsplash.com/photo-1567306226416-28f0efdc88ce?w=900&q=85&auto=format&fit=crop',
-    price: 4.49, old: 6.00, weight: '500 g', origin: 'Sonoma, CA', tag: null },
-  { id: 3,  cat: 'bakery',     title: 'Country Sourdough Loaf',
-    img: 'https://images.unsplash.com/photo-1447175008436-054170c2e979?w=900&q=85&auto=format&fit=crop',
-    price: 7.50, old: null, weight: '800 g', origin: 'Brooklyn, NY', tag: 'New' },
-  { id: 4,  cat: 'fruits',     title: 'Fuji Apples',
-    img: 'https://images.unsplash.com/photo-1570913149827-d2ac84ab3f9a?w=900&q=85&auto=format&fit=crop',
-    price: 3.10, old: 4.40, weight: '6 pc', origin: 'Hood River, OR', tag: null },
-  { id: 5,  cat: 'dairy',      title: 'Grass-Fed Whole Milk',
-    img: 'https://images.unsplash.com/photo-1619566636858-adf3ef46400b?w=900&q=85&auto=format&fit=crop',
-    price: 3.95, old: null, weight: '1 L glass', origin: 'Middlebury, VT', tag: null },
-  { id: 6,  cat: 'vegetables', title: 'Hass Avocados',
-    img: 'https://images.unsplash.com/photo-1586201375761-83865001e31c?w=900&q=85&auto=format&fit=crop',
-    price: 6.00, old: null, weight: 'pack of 4', origin: 'Michoacán, MX', tag: null },
-  { id: 7,  cat: 'dairy',      title: 'Brown Hen Eggs',
-    img: 'https://images.unsplash.com/photo-1506976785307-8732e854ad03?w=900&q=85&auto=format&fit=crop',
-    price: 5.20, old: null, weight: '12 ct', origin: 'Lancaster, PA', tag: 'Weekly favourite' },
-  { id: 8,  cat: 'fruits',     title: 'Mountain Strawberries',
-    img: 'https://images.unsplash.com/photo-1464965911861-746a04b4bca6?w=900&q=85&auto=format&fit=crop',
-    price: 4.99, old: 6.50, weight: '250 g', origin: 'Asheville, NC', tag: null },
-  { id: 9,  cat: 'bakery',     title: 'Butter Croissants',
-    img: 'https://images.unsplash.com/photo-1555507036-ab1f4038808a?w=900&q=85&auto=format&fit=crop',
-    price: 5.60, old: null, weight: 'pack of 4', origin: 'Portland, ME', tag: null },
-  { id: 10, cat: 'vegetables', title: 'Rainbow Bell Peppers',
-    img: 'https://images.unsplash.com/photo-1542838132-92c53300491e?w=900&q=85&auto=format&fit=crop',
-    price: 3.80, old: null, weight: '3 pc', origin: 'Hudson Valley, NY', tag: null },
-  { id: 11, cat: 'dairy',      title: 'Aged Farmhouse Cheddar',
-    img: 'https://images.unsplash.com/photo-1486297678162-eb2a19b0a32d?w=900&q=85&auto=format&fit=crop',
-    price: 8.90, old: null, weight: '250 g', origin: 'Cabot, VT', tag: 'New' },
-  { id: 12, cat: 'fruits',     title: 'Valencia Oranges',
-    img: 'https://images.unsplash.com/photo-1515543237350-b3eea1ec8082?w=900&q=85&auto=format&fit=crop',
-    price: 5.80, old: 7.20, weight: '1.5 kg', origin: 'Ventura, CA', tag: null },
+  /* Health & Strength */
+  { id: 1, cat: 'health', title: 'Pork gelatin 400g',
+    img: 'https://images.unsplash.com/photo-1607602132700-068258431c6c?w=400&q=85&auto=format&fit=crop',
+    price: 17.80, old: null },
+  { id: 2, cat: 'health', title: 'Red clover herbal tincture 50ml',
+    img: 'https://images.unsplash.com/photo-1611073615452-4889ae4664bd?w=400&q=85&auto=format&fit=crop',
+    price: 8.80, old: null },
+  { id: 3, cat: 'health', title: 'L-tryptophan 30 capsules',
+    img: 'https://images.unsplash.com/photo-1550572017-edd951b55104?w=400&q=85&auto=format&fit=crop',
+    price: 37.60, old: null },
+  { id: 4, cat: 'health', title: 'Bach flower drops — Quit Smoking',
+    img: 'https://images.unsplash.com/photo-1585435557343-3b092031a831?w=400&q=85&auto=format&fit=crop',
+    price: 13.00, old: null },
+  { id: 5, cat: 'health', title: 'Marine collagen powder 200g',
+    img: 'https://images.unsplash.com/photo-1628771065518-0d82f1938462?w=400&q=85&auto=format&fit=crop',
+    price: 42.00, old: 48.00 },
+  { id: 6, cat: 'health', title: 'Omega-3 fish oil 60 softgels',
+    img: 'https://images.unsplash.com/photo-1584308972272-9e4e7685e80f?w=400&q=85&auto=format&fit=crop',
+    price: 24.50, old: null },
+
+  /* Beauty & Wellness */
+  { id: 10, cat: 'beauty', title: 'Lavender essential oil 10ml',
+    img: 'https://images.unsplash.com/photo-1595392029731-a6a402bb536d?w=400&q=85&auto=format&fit=crop',
+    price: 5.95, old: null },
+  { id: 11, cat: 'beauty', title: 'Herbal hair dye — light brown 70g',
+    img: 'https://images.unsplash.com/photo-1571875257727-256c39da42af?w=400&q=85&auto=format&fit=crop',
+    price: 7.00, old: null },
+  { id: 12, cat: 'beauty', title: 'Rose water toner 250ml',
+    img: 'https://images.unsplash.com/photo-1608571423902-eed4a5ad8108?w=400&q=85&auto=format&fit=crop',
+    price: 12.40, old: null },
+  { id: 13, cat: 'beauty', title: 'Argan oil shampoo bar',
+    img: 'https://images.unsplash.com/photo-1617897903246-719242758050?w=400&q=85&auto=format&fit=crop',
+    price: 9.80, old: null },
+
+  /* Home & Hygiene */
+  { id: 20, cat: 'hygiene', title: 'Deodorizing foot powder 75g',
+    img: 'https://images.unsplash.com/photo-1620916297893-4c1a02826f9f?w=400&q=85&auto=format&fit=crop',
+    price: 4.40, old: null },
+  { id: 21, cat: 'hygiene', title: 'Bamboo toothbrush, pack of 4',
+    img: 'https://images.unsplash.com/photo-1603729362753-f8162ac6c3df?w=400&q=85&auto=format&fit=crop',
+    price: 11.20, old: null },
+  { id: 22, cat: 'hygiene', title: 'Natural hand soap 500ml',
+    img: 'https://images.unsplash.com/photo-1584305574647-0cc949a2bb9f?w=400&q=85&auto=format&fit=crop',
+    price: 7.60, old: null },
+  { id: 23, cat: 'hygiene', title: 'Mineral deodorant stick',
+    img: 'https://images.unsplash.com/photo-1585386959984-a4155224a1ad?w=400&q=85&auto=format&fit=crop',
+    price: 9.00, old: 11.50 },
+
+  /* Food & Drinks */
+  { id: 30, cat: 'food', title: 'Bio chlorella powder 150g',
+    img: 'https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=400&q=85&auto=format&fit=crop',
+    price: 19.90, old: null },
+  { id: 31, cat: 'food', title: 'Raw wildflower honey 500g',
+    img: 'https://images.unsplash.com/photo-1604908176997-125f25cc6f3d?w=400&q=85&auto=format&fit=crop',
+    price: 14.50, old: null },
+  { id: 32, cat: 'food', title: 'Ceremonial-grade matcha 40g',
+    img: 'https://images.unsplash.com/photo-1515823064-d6e0c04616a7?w=400&q=85&auto=format&fit=crop',
+    price: 28.00, old: 34.00 },
+  { id: 33, cat: 'food', title: 'Cold-pressed olive oil 500ml',
+    img: 'https://images.unsplash.com/photo-1474979266404-7eaacbcd87c5?w=400&q=85&auto=format&fit=crop',
+    price: 16.80, old: null },
+  { id: 34, cat: 'food', title: 'Granola with nuts & berries 350g',
+    img: 'https://images.unsplash.com/photo-1488477181946-6428a0291777?w=400&q=85&auto=format&fit=crop',
+    price: 8.40, old: null },
+  { id: 35, cat: 'food', title: 'Organic almonds, raw 300g',
+    img: 'https://images.unsplash.com/photo-1574493582880-36b22d2c1ef2?w=400&q=85&auto=format&fit=crop',
+    price: 11.60, old: null },
 ];
 
 const $  = (s, r = document) => r.querySelector(s);
 const $$ = (s, r = document) => [...r.querySelectorAll(s)];
 const fmt = n => `$${n.toFixed(2)}`;
 
-/* ---------- Shop grid ---------- */
-function cardTpl(p) {
-  const price = p.old ? `${fmt(p.price)}<s>${fmt(p.old)}</s>` : fmt(p.price);
+/* ---------- Mini product card (for mega blocks) ---------- */
+function miniTpl(p) {
+  const priceHtml = p.old
+    ? `${fmt(p.price)}<s>${fmt(p.old)}</s>`
+    : fmt(p.price);
   return `
-    <article class="card" data-cat="${p.cat}" data-id="${p.id}">
-      <div class="card__img">
-        <button type="button" class="card__fav" aria-label="Save for later">
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.7l-1-1.1a5.5 5.5 0 1 0-7.8 7.8l1.1 1L12 21l7.7-7.6 1.1-1a5.5 5.5 0 0 0 0-7.8z"/></svg>
-        </button>
-        <img src="${p.img}" alt="${p.title}" loading="lazy" />
+    <div class="mini" data-id="${p.id}" role="button" tabindex="0">
+      <div class="mini__img"><img src="${p.img}" alt="${p.title}" loading="lazy"/></div>
+      <div class="mini__body">
+        <span class="mini__title">${p.title}</span>
+        <span class="mini__price">${priceHtml}</span>
       </div>
-      <div class="card__body">
-        <span class="card__meta">${p.origin} · ${p.weight}</span>
-        <h3 class="card__title">${p.title}</h3>
-        <div class="card__foot">
-          <span class="card__price">${price}</span>
-          <button type="button" class="card__add" data-add="${p.id}">Add</button>
-        </div>
-      </div>
-    </article>`;
-}
-function renderShop(filter = 'all') {
-  const grid = $('#shopGrid');
-  if (!grid) return;
-  const list = filter === 'all' ? PRODUCTS : PRODUCTS.filter(p => p.cat === filter);
-  grid.innerHTML = list.map(cardTpl).join('');
+    </div>`;
 }
 
-/* ---------- Horizontal showcase rail ---------- */
-function showTpl(p) {
-  const price = p.old ? `${fmt(p.price)}<s>${fmt(p.old)}</s>` : fmt(p.price);
-  const tagHtml = p.tag ? `<span class="show-card__tag">${p.tag}</span>` : '';
-  return `
-    <article class="show-card" data-id="${p.id}">
-      <div class="show-card__img">
-        ${tagHtml}
-        <img src="${p.img}" alt="${p.title}" loading="lazy" />
-      </div>
-      <span class="show-card__meta">${p.origin} · ${p.weight}</span>
-      <h3 class="show-card__title">${p.title}</h3>
-      <div class="show-card__foot">
-        <span class="show-card__price">${price}</span>
-        <button type="button" class="show-card__add" data-add="${p.id}">Add</button>
-      </div>
-    </article>`;
-}
-function renderShowcase() {
-  const rail = $('#showcaseRail');
-  if (!rail) return;
-  // Best sellers / highlights — first 8 items feels curated
-  rail.innerHTML = PRODUCTS.slice(0, 8).map(showTpl).join('');
-}
-function initShowcaseControls() {
-  const rail = $('#showcaseRail');
-  if (!rail) return;
-  $$('.scroll-btn').forEach(b => b.addEventListener('click', () => {
-    const delta = Number(b.dataset.dir) * (rail.clientWidth * 0.7);
-    rail.scrollBy({ left: delta, behavior: 'smooth' });
-  }));
-}
-
-/* ---------- Filters ---------- */
-function initFilters() {
-  $$('.f').forEach(b => b.addEventListener('click', () => {
-    $$('.f').forEach(x => x.classList.remove('is-active'));
-    b.classList.add('is-active');
-    renderShop(b.dataset.filter);
-  }));
+function renderMegaBlocks() {
+  $$('[data-cat-grid]').forEach(wrap => {
+    const cat = wrap.dataset.catGrid;
+    const list = PRODUCTS.filter(p => p.cat === cat).slice(0, 6);
+    wrap.innerHTML = list.map(miniTpl).join('');
+  });
 }
 
 /* ---------- Cart ---------- */
 const cart = new Map();
+
 function addToCart(id) {
-  const realId = id === 99 ? 1 : id;
-  const p = PRODUCTS.find(x => x.id === realId);
+  const p = PRODUCTS.find(x => x.id === id);
   if (!p) return;
-  const e = cart.get(realId) || { product: p, qty: 0 };
+  const e = cart.get(id) || { product: p, qty: 0 };
   e.qty++;
-  cart.set(realId, e);
+  cart.set(id, e);
   renderCart();
   toast(`Added — ${p.title}`);
 }
 function removeFromCart(id) { cart.delete(id); renderCart(); }
+
 function renderCart() {
   const body = $('#cartBody');
   if (!body) return;
   let total = 0, count = 0;
+
   if (cart.size === 0) {
-    body.innerHTML = '<p class="drawer__empty">Your bag is empty.</p>';
+    body.innerHTML = '<p class="drawer__empty">Your cart is empty.</p>';
   } else {
     body.innerHTML = [...cart.values()].map(({ product, qty }) => {
       total += product.price * qty;
@@ -144,15 +131,17 @@ function renderCart() {
           <img src="${product.img}" alt="">
           <div>
             <strong>${product.title}</strong>
-            <div class="qty">${qty} × ${fmt(product.price)}<span class="rm" data-rm="${product.id}">Remove</span></div>
+            <span class="qty">${qty} × ${fmt(product.price)}<span class="rm" data-rm="${product.id}">Remove</span></span>
           </div>
           <b>${fmt(product.price * qty)}</b>
         </div>`;
     }).join('');
   }
+
   $$('[data-cart-total-drawer]').forEach(e => e.textContent = fmt(total));
   $$('[data-cart-count]').forEach(e => e.textContent = count);
 
+  // Free-shipping progress
   const bar  = $('#shipBar');
   const msg  = $('#shipMsg');
   const fill = $('#shipFill');
@@ -170,67 +159,68 @@ function renderCart() {
     }
   }
 }
+
 function openCart()  { $('#cartDrawer').classList.add('is-open'); $('#cartScrim').classList.add('is-open'); }
 function closeCart() { $('#cartDrawer').classList.remove('is-open'); $('#cartScrim').classList.remove('is-open'); }
+
 function initCart() {
+  // Click a mini card → add to cart (whole card is clickable)
   document.addEventListener('click', e => {
-    const add = e.target.closest('[data-add]');
-    if (add) { addToCart(Number(add.dataset.add)); return; }
+    const mini = e.target.closest('.mini[data-id]');
+    if (mini) {
+      addToCart(Number(mini.dataset.id));
+      return;
+    }
     const rm = e.target.closest('[data-rm]');
-    if (rm) { removeFromCart(Number(rm.dataset.rm)); return; }
-    const fav = e.target.closest('.card__fav');
-    if (fav) { fav.classList.toggle('is-on'); return; }
+    if (rm) { e.stopPropagation(); removeFromCart(Number(rm.dataset.rm)); return; }
   });
-  $('#openCart').addEventListener('click', e => { e.preventDefault(); openCart(); });
-  $('.drawer__close').addEventListener('click', closeCart);
-  $('#cartScrim').addEventListener('click', closeCart);
-  document.addEventListener('keydown', e => { if (e.key === 'Escape') closeCart(); });
+  document.addEventListener('keydown', e => {
+    if (e.key === 'Enter' || e.key === ' ') {
+      const mini = e.target.closest?.('.mini[data-id]');
+      if (mini) { e.preventDefault(); addToCart(Number(mini.dataset.id)); }
+    }
+    if (e.key === 'Escape') closeCart();
+  });
+  $('#openCart')?.addEventListener('click', e => { e.preventDefault(); openCart(); });
+  $('.drawer__close')?.addEventListener('click', closeCart);
+  $('#cartScrim')?.addEventListener('click', closeCart);
+}
+
+/* ---------- Category nav active state (scroll-based) ---------- */
+function initCatNavSpy() {
+  const chips = $$('.cat-chip[href^="#"]');
+  if (!chips.length) return;
+  const sections = chips
+    .map(c => document.querySelector(c.getAttribute('href')))
+    .filter(Boolean);
+  if (!sections.length || !('IntersectionObserver' in window)) return;
+
+  const io = new IntersectionObserver(entries => {
+    entries.forEach(en => {
+      if (en.isIntersecting) {
+        const id = '#' + en.target.id;
+        chips.forEach(c => c.classList.toggle('is-active', c.getAttribute('href') === id));
+      }
+    });
+  }, { rootMargin: '-40% 0px -55% 0px' });
+  sections.forEach(s => io.observe(s));
 }
 
 /* ---------- Toast ---------- */
 let toastTimer;
 function toast(msg) {
-  const el = $('#toast'); if (!el) return;
+  const el = $('#toast');
+  if (!el) return;
   el.textContent = msg;
   el.classList.add('is-show');
   clearTimeout(toastTimer);
   toastTimer = setTimeout(() => el.classList.remove('is-show'), 2400);
 }
 
-/* ---------- Reveal on scroll ---------- */
-function initReveal() {
-  if (!('IntersectionObserver' in window)) {
-    $$('.reveal').forEach(el => el.classList.add('is-in'));
-    return;
-  }
-  const io = new IntersectionObserver((entries, o) => {
-    entries.forEach(en => {
-      if (en.isIntersecting) { en.target.classList.add('is-in'); o.unobserve(en.target); }
-    });
-  }, { threshold: 0.12, rootMargin: '0px 0px -60px 0px' });
-  $$('.reveal, .hero__figure').forEach(el => io.observe(el));
-}
-
-/* ---------- Sticky nav state ---------- */
-function initNavScroll() {
-  const nav = $('.nav');
-  if (!nav) return;
-  const tick = () => {
-    if (window.scrollY > 20) nav.classList.add('nav--scrolled');
-    else nav.classList.remove('nav--scrolled');
-  };
-  window.addEventListener('scroll', tick, { passive: true });
-  tick();
-}
-
 /* ---------- Boot ---------- */
 document.addEventListener('DOMContentLoaded', () => {
-  renderShop('all');
-  renderShowcase();
-  initShowcaseControls();
-  initFilters();
+  renderMegaBlocks();
   initCart();
   renderCart();
-  initReveal();
-  initNavScroll();
+  initCatNavSpy();
 });
