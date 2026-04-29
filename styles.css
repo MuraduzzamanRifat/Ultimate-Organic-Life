@@ -308,8 +308,6 @@ table { border-collapse: collapse; width: 100%; }
 .hero__inner {
   position: relative; z-index: 2;
   max-width: var(--max); margin: 0 auto;
-  display: grid; grid-template-columns: minmax(0, 1.5fr) minmax(280px, 1fr);
-  gap: 32px; align-items: stretch;
 }
 .hero__lead {
   background: #fff;
@@ -359,6 +357,31 @@ table { border-collapse: collapse; width: 100%; }
   font-size: 13px; font-weight: 600; color: var(--green-dark);
 }
 .panel__cta:hover { color: var(--ink); }
+
+/* Category tiles (home) */
+.cat-tiles-wrap { padding-top: 0; }
+.cat-tiles {
+  display: grid; grid-template-columns: repeat(4, 1fr);
+  gap: clamp(14px, 2vw, 24px);
+}
+.cat-tile {
+  background: #fff;
+  border-radius: var(--r);
+  padding: 28px 26px;
+  display: flex; flex-direction: column; gap: 6px;
+  box-shadow: 0 6px 18px rgba(43,49,64,.05);
+  transition: transform var(--t-fast), box-shadow var(--t-fast);
+  color: var(--ink);
+  border-top: 4px solid var(--green);
+}
+.cat-tile:hover { transform: translateY(-4px); box-shadow: 0 14px 32px rgba(43,49,64,.1); }
+.cat-tile svg { color: var(--green-dark); margin-bottom: 8px; }
+.cat-tile strong { font-size: 16px; font-weight: 700; color: var(--ink); }
+.cat-tile small { font-size: 12px; color: var(--muted); }
+.cat-tile--beauty { border-top-color: var(--pink); }
+.cat-tile--beauty svg { color: var(--pink); }
+.cat-tile--hygiene { border-top-color: var(--blue); }
+.cat-tile--hygiene svg { color: var(--blue); }
 
 /* Advisor banner (home) */
 .advisor {

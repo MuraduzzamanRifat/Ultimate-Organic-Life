@@ -1,0 +1,204 @@
+// GreenKart — data model
+// Default datasource is SQLite for zero-config dev.
+// Swap provider + DATABASE_URL to switch to Postgres in production.
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = env("DATABASE_URL")
+}
+
+model Category {
+  id        String    @id @default(cuid())
+  slug      String    @unique
+  name      String
+  tint      String?
+  parentId  String?
+  parent    Category? @relation("CategoryTree", fields: [parentId], references: [id])
+  children  Category[] @relation("CategoryTree")
+  products  Product[]
+  createdAt DateTime  @default(now())
+}
+
+model Product {
+  id          String   @id @default(cuid())
+  slug        String   @unique
+  title       String
+  subtitle    String?
+  description String
+  story       String?
+
+  categoryId  String
+  category    Category @relation(fields: [categoryId], references: [id])
+  subcat      String
+
+  price       Float
+  oldPrice    Float?
+  currency    String   @default("USD")
+  weight      String
+  stock       Int      @default(0)
+
+  origin      String?
+  producer    String?
+  producerSince String?
+  producerQuote String?
+
+  rating      Float    @default(0)
+  reviewCount Int      @default(0)
+
+  featured    Boolean  @default(false)
+  isActive    Boolean  @default(true)
+
+  tags        ProductTag[]
+  images      ProductImage[]
+  variants    ProductVariant[]
+  reviews     Review[]
+  orderItems  OrderItem[]
+
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+
+  @@index([categoryId])
+  @@index([featured])
+}
+
+model ProductImage {
+  id        String  @id @default(cuid())
+  productId String
+  product   Product @relation(fields: [productId], references: [id], onDelete: Cascade)
+  url       String
+  alt       String?
+  position  Int     @default(0)
+
+  @@index([productId])
+}
+
+model ProductVariant {
+  id        String  @id @default(cuid())
+  productId String
+  product   Product @relation(fields: [productId], references: [id], onDelete: Cascade)
+  sku       String  @unique
+  label     String  // e.g. "200 g", "500 g"
+  price     Float
+  stock     Int     @default(0)
+}
+
+model ProductTag {
+  id        String  @id @default(cuid())
+  productId String
+  product   Product @relation(fields: [productId], references: [id], onDelete: Cascade)
+  label     String
+
+  @@index([productId])
+}
+
+model Review {
+  id        String   @id @default(cuid())
+  productId String
+  product   Product  @relation(fields: [productId], references: [id], onDelete: Cascade)
+  author    String
+  rating    Int
+  body      String
+  verified  Boolean  @default(false)
+  createdAt DateTime @default(now())
+
+  @@index([productId])
+}
+
+model User {
+  id        String   @id @default(cuid())
+  email     String   @unique
+  name      String?
+  phone     String?
+  hash      String?
+  addresses Address[]
+  orders    Order[]
+  createdAt DateTime @default(now())
+}
+
+model Address {
+  id        String  @id @default(cuid())
+  userId    String
+  user      User    @relation(fields: [userId], references: [id], onDelete: Cascade)
+  fullName  String
+  phone     String
+  line1     String
+  line2     String?
+  city      String
+  state     String
+  zip       String
+  country   String  @default("US")
+  isDefault Boolean @default(false)
+}
+
+model Order {
+  id            String      @id @default(cuid())
+  number        String      @unique           // human-friendly e.g. GK-XXXXXX
+  userId        String?
+  user          User?       @relation(fields: [userId], references: [id])
+  email         String
+  phone         String?
+
+  status        OrderStatus @default(PENDING)
+
+  subtotal      Float
+  shippingCost  Float
+  tax           Float
+  total         Float
+  currency      String      @default("USD")
+
+  paymentMethod PaymentMethod
+  paymentRef    String?     // gateway txn id
+  paid          Boolean     @default(false)
+
+  shippingName  String
+  shippingPhone String?
+  shippingLine1 String
+  shippingLine2 String?
+  shippingCity  String
+  shippingState String
+  shippingZip   String
+  shippingCountry String    @default("US")
+
+  items         OrderItem[]
+
+  createdAt     DateTime    @default(now())
+  updatedAt     DateTime    @updatedAt
+
+  @@index([userId])
+  @@index([status])
+}
+
+model OrderItem {
+  id          String  @id @default(cuid())
+  orderId     String
+  order       Order   @relation(fields: [orderId], references: [id], onDelete: Cascade)
+  productId   String
+  product     Product @relation(fields: [productId], references: [id])
+  title       String  // snapshot
+  unitPrice   Float
+  qty         Int
+
+  @@index([orderId])
+}
+
+enum OrderStatus {
+  PENDING
+  PAID
+  SHIPPED
+  DELIVERED
+  CANCELLED
+  REFUNDED
+}
+
+enum PaymentMethod {
+  COD
+  BKASH
+  NAGAD
+  ROCKET
+  CARD
+  STRIPE
+}
